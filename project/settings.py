@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'distances',
     'requirements',
     'runners',
-    'runs'
+    'runs',
+    'user_runners'
 ]
 
 MIDDLEWARE = [

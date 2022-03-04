@@ -12,7 +12,7 @@ from datetime import datetime, timedelta
 from django.conf import settings
 import jwt
 from rest_framework.permissions import IsAuthenticated
-
+from .serializers.populated import PopulatedUserSerializer
 User = get_user_model()
 
 class RegisterView(APIView):
@@ -62,7 +62,7 @@ class LoggedInProfileView(APIView):
     def get(self, request):
         print('request', request.user)
         user = self.get_user(pk=request.user.id)
-        serialized_user = UserSerializer(user)
+        serialized_user = PopulatedUserSerializer(user)
         print('userrrr', serialized_user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 

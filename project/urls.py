@@ -24,4 +24,5 @@ urlpatterns = [
     path('api/auth/', include('jwt_auth.urls')),
     path('api/runners/', include('runners.urls')),
     path('api/runs/', include('runs.urls')),
+    path('api/user_runners/', include('user_runners.urls')),
 ]

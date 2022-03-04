@@ -8,6 +8,5 @@ class Runner(models.Model):
     profile_image = models.CharField(max_length=300)
 
 
-
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
