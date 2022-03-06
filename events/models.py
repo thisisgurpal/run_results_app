@@ -7,7 +7,7 @@ class Event(models.Model):
     description = models.TextField(max_length=300, default=None)
     location = models.CharField(max_length=100, default=None)
     event_image = models.CharField(max_length=500, default=None)
-    date = models.DateField(default=None)
+    new_event_date = models.DateField(default=None)
     distance = models.ForeignKey(
         "distances.Distance",
         related_name = "events",
@@ -29,4 +29,4 @@ class Event(models.Model):
 
 
     def __str__(self):
-        return f"{self.name} - {self.distance} ({self.date})"
+        return f"{self.name} - {self.distance}"

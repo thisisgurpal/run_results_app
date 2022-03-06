@@ -66,13 +66,19 @@ class LoggedInProfileView(APIView):
         print('userrrr', serialized_user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 
-class EditLoggedInProfileView(APIView):
+class ProfileView(APIView):
 
     def get_user(self, pk):
         try:
             return User.objects.get(pk=pk)
         except User.DoesNotExist:
             raise PermissionDenied(detail="Invalid Credentials")
+
+    def get(self, _request, pk):
+        user = self.get_user(pk=pk)
+        serialized_user = UserSerializer(user)
+        print('userrrr', serialized_user)
+        return Response(serialized_user.data, status=status.HTTP_200_OK)
 
     def put(self, request, pk):
         user_to_update = self.get_user(pk=pk)
