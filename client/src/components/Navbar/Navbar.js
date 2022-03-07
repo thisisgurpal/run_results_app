@@ -48,12 +48,18 @@ const Navbar = () => {
     return (
         <Nav>
             <NavLink to="/">
-                <h1>Logo</h1>
+                <h1>RunnersUniverse</h1>
             </NavLink>
             <Bars />
             <NavMenu>
                 <NavLink to="/events" activestyle="true">
                     Events
+                </NavLink>
+                <NavLink to="/training" activestyle="true">
+                    Training
+                </NavLink>
+                <NavLink to="/events-for-you" activestyle="true">
+                    Events For You
                 </NavLink>
                 {userIsAuthenticated() ? 
                 <NavLink to="/profile" onClick={gotToUserProfile} activestyle="true">

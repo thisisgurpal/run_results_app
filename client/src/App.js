@@ -8,39 +8,34 @@ import Navbar from './components/Navbar/Navbar'
 import UserProfile from './components/Profiles/UserProfile'
 import Login from './components/auth/Login'
 import Register from './components/auth/Register'
+import SingleEvent from './components/Events/SingleEvent'
+import Training from './components/TrainingPlans/Training'
+import EventsForYou from './components/Events/EventsForYou'
+import Footer from './components/Footer'
+import { Flex } from '@chakra-ui/react'
+import ScrollToTop from './components/helper/ScrollToTop'
+
 
 const App = () => {
+
   return (
     <BrowserRouter>
+    <Flex direction='column' justifyContent='space-between'>
     <Navbar />
-    <Parallax pages={2} style={{ top: '100', left: '0' }}>
-  <ParallaxLayer
-    offset={0}
-    speed={2.5}>
+    <ScrollToTop />
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
         <Route path="/profile/:userId" element={<UserProfile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/events/:eventId" element={<SingleEvent />} />
+        <Route path="/training" element={<Training />} />
+        <Route path="/events-for-you" element={<EventsForYou />} />
       </Routes>
-  </ParallaxLayer>
-
-  <ParallaxLayer offset={1} speed={2} style={{ backgroundColor: '#ff6d6d' }} />
-
-  <ParallaxLayer
-    offset={1}
-    speed={0.5}
-    style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      color: 'white',
-    }}>
-    <p>Scroll up</p>
-  </ParallaxLayer>
-</Parallax>
-    </BrowserRouter>
+      <Footer />
+      </Flex>
+      </BrowserRouter>
   )
 }
 

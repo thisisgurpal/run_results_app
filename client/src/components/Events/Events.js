@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useLayoutEffect } from "react";
 import axios from 'axios'
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Flex } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel, Flex, Box, Heading } from '@chakra-ui/react'
+import { Link } from "react-router-dom";
 
 function Events() {
   const [ eventsData, setEventsData ] = useState({})
@@ -14,53 +15,29 @@ useEffect(() => {
     getEvents()
   }, [])
 
-  function DataTabs({ data }) {
-    return (
-      <Tabs variant='enclosed' w='80%'>
-        <TabList>
-          {data.map((tab, index) => (
-            <Tab key={index}>{tab.label}</Tab>
-          ))}
-        </TabList>
-        <TabPanels>
-          {data.map((tab, index) => (
-            <TabPanel p={4} key={index}>
-              {tab.content}
-            </TabPanel>
-          ))}
-        </TabPanels>
-      </Tabs>
-    )
-  }
-
-  // 2. Create an array of data
-  const tabData = [
-    {
-      label: 'Nigerian Jollof',
-      content: 'Perhaps the greatest dish ever invented.',
-    },
-    {
-      label: 'Pounded Yam & Egusi',
-      content:
-        'Perhaps the surest dish ever invented but fills the stomach more than rice.',
-    },
-  ]
+  
 
   return (
     <>
     {Object.keys(eventsData).length ?
-    eventsData.map(event => {
+    <Flex minHeight='100vh' direction='row' flexWrap='wrap'>
+    {eventsData.map(event => {
       return (
-        <h1 key={event.id}>{event.name}</h1>   
+        <Link boxshadow='xl' key={event.id} to={`/events/${event.id}`}>
+          <Flex name="actions" p='4' mb='5' color='white' bgGradient='linear(to-t, red.200, pink.500)' width='300px' height='320px' flexDirection='column' borderWidth='1px' alignItems='center' justifyContent='flex-start' boxshadow='2xl' borderRadius='10'>
+            <Box name="headline" pl='4' pr='4' mb='4' width=''>
+              <Heading textAlign='center' name='eventName' color='primary' mt='0' size='lg'>
+                {event.name}
+              </Heading>
+            </Box>
+          </Flex>
+        </Link>  
       )
-    })
+    })}
+    </Flex>
     :
-    ''
+    <Flex minHeight='100vh'></Flex>
   }
-  <Flex direction='column' justifyContent='center' alignItems='center'>
-  <DataTabs data={tabData} />
-  </Flex>
-  
    </> 
   )
 }
