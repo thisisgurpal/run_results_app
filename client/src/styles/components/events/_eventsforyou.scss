@@ -1,6 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plaster&display=swap');
+
+  #prs_input_title {
+    font-family: 'Plaster', cursive;
+    font-size: 60px;
+  }
+
+  #prs_title {
+    font-family: 'Inter', sans-serif;
+    font-size: 30px;
+  }
 
   #prs {
-    font-family: 'Inter', sans-serif;
-    font-size: 40px;
+    font-family: 'Plaster', cursive;
+    font-size: 50px;
   }
+
+  #input_prs {
+    border: 2px solid white;
+    background-color: rgb(22, 22, 22);
+    color: white;
+  }
+
+  .chakra-slider__thumb{
+    color: black;
+  }
+
+
+  

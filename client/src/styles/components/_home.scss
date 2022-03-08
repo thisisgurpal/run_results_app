@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plaster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
 body {
   min-height: 100vh;
@@ -10,7 +12,7 @@ body {
   min-height: 100vh;
   overflow: hidden;
   border-radius: 7px;
-  background: #f0f0f0;
+  background: rgb(0, 0, 0);
 }
 
 .ccard-main {
@@ -50,4 +52,28 @@ body {
 #home_title {
   font-family: 'Inter', sans-serif;
   font-size: 90px;
+  color: #fff;
+  background: linear-gradient(to right, rgb(197, 197, 197), rgb(197, 197, 197) 50%, rgb(255, 255, 255) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+  &:hover {
+    background-position: 0 100%;
+    transform: scale(1.02);
+  }
+}
+
+.home_image_title{
+  font-family: 'Plaster', cursive;
+  font-size: 60px;
+  color: black;
+}
+
+.home_image_desc{
+  font-family: 'Comfortaa', cursive;
+  color: black;
 }

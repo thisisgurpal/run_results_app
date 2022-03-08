@@ -56,7 +56,7 @@ const Navbar = () => {
                     Events
                 </NavLink>
                 <NavLink to="/training" activestyle="true">
-                    Training
+                    Training & Nutrition
                 </NavLink>
                 <NavLink to="/events-for-you" activestyle="true">
                     Events For You

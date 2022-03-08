@@ -25,4 +25,7 @@ urlpatterns = [
     path('api/runners/', include('runners.urls')),
     path('api/runs/', include('runs.urls')),
     path('api/user_runners/', include('user_runners.urls')),
+    path('api/comments/', include('comments.urls')),
+    path('api/training/', include('training.urls')),
+    path('api/fav_training/', include('fav_training.urls')),
 ]

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
 * {
   box-sizing: border-box;
-  font-family: 'Sora', sans-serif;
+  font-family: 'Comfortaa', cursive;
   margin: 0;
   padding: 0;
 }
@@ -11,3 +11,5 @@
 @import './components/events/eventsforyou.scss';
 @import './components/navbar.scss';
 @import './components/home.scss';
+@import './components/events/singleevent.scss';
+@import './components/events/events.scss'

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { Tabs, TabList, TabPanels, Tab, TabPanel, Flex, Box, Heading} from '@chakra-ui/react'
+import { Text, Tabs, TabList, TabPanels, Tab, TabPanel, Flex, Box, Heading} from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 function SingleEvent() {
@@ -40,10 +40,10 @@ function SingleEvent() {
             </TabList>
             <TabPanels>
               {data.map((tab, index) => (
-                <TabPanel p={4} key={index}>
-                  {tab.position + ' => '}
-                  <Link to='/'>{tab.name}</Link>
-                  {' => ' + tab.time}
+                <TabPanel display='flex' alignItems='center' p={4} key={index}>
+                  <Text id='position' fontSize='100px'>{tab.position}</Text>
+                  <Link to='/'><Text ml='10' fontSize='50px' id='position_name'>{tab.name}</Text></Link>
+                  <Text ml='10' fontSize='50px' id='position_time'>{tab.time}</Text>
                 </TabPanel>
               ))}
             </TabPanels>
@@ -53,10 +53,12 @@ function SingleEvent() {
 
   return (
   <>
-  <h1>Single Event</h1>
   {Object.keys(runsData).length ?
-    <Flex direction='column' justifyContent='center' alignItems='center'>
-    <DataTabs data={runsData} />
+    <Flex minHeight='100vh' direction='column' justifyContent='center' alignItems='center'>
+      <Box backgroundColor='white' borderRadius='10px' padding='20px' width='1200px' h='1000px'>
+      <DataTabs data={runsData} />
+      </Box>
+    
   </Flex>
   :
 ''

@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'requirements',
     'runners',
     'runs',
-    'user_runners'
+    'user_runners',
+    'comments',
+    'training',
+    'fav_training'
 ]
 
 MIDDLEWARE = [

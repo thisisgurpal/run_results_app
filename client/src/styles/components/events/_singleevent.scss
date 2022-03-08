@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Plaster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
+#position {
+    font-family: 'Plaster', cursive;
+}
+
+#position_time {
+    font-family: 'Comfortaa', cursive;
+}
+
+#position_name {
+    font-family: 'Comfortaa', cursive;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(to right, #FFBF00, #FFBF00 50%, rgb(0, 0, 0) 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    background-position: 100%;
+    transition: background-position 275ms ease;
+    text-decoration: none; // text decorations are clipped in WebKit browsers
+    &:hover {
+      background-position: 0 100%;
+    }
+  }
+

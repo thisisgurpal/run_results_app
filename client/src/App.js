@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
-    <Flex direction='column' justifyContent='space-between'>
+    <Flex minHeight='100vh' direction='column' justifyContent='space-between'>
     <Navbar />
     <ScrollToTop />
     <Routes>

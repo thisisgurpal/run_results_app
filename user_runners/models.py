@@ -7,11 +7,11 @@ class User_Runner(models.Model):
         "jwt_auth.User",
         related_name = "user_runners",
         on_delete = models.CASCADE,
-        default = 2
+        default = 1
     )
     runners = models.ForeignKey( # ManyToMany field
         "runners.Runner",
         related_name = "user_runners",
         on_delete = models.CASCADE,
-        default = 2
+        default = 1
     )
