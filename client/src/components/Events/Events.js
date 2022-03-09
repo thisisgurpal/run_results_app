@@ -25,6 +25,7 @@ function Events() {
           <Flex justifyContent='center' h='650px'>
             <Box w='80%' h='100%' display='flex'>
               <Box w='90%' h='100%' mr='2'>
+                <Link to={`/events/${eventsData[0].id}`}>
                 <Box id='main_event' color='black' display='flex' justifyContent='center' alignItems='center' w='100%' h='100%' backgroundColor='#FFBF00'>
                   <Flex direction='column' h='100%'>
                     <Image mb='5' src={eventsData[0].event_image} alt=''></Image>
@@ -32,6 +33,7 @@ function Events() {
                     <Text textAlign='center' className="home_image_desc">{eventsData[0].description}</Text>
                   </Flex>
                 </Box>
+                </Link>
               </Box>
               <Flex ml='2' direction='column' flexWrap='wrap' width='100%' h='100%'>
                 {eventsData.map(event => {

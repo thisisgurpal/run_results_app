@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
 
@@ -14,24 +14,32 @@ import EventsForYou from './components/Events/EventsForYou'
 import Footer from './components/Footer'
 import { Flex } from '@chakra-ui/react'
 import ScrollToTop from './components/helper/ScrollToTop'
-
+import Sidebar from './components/Sidebar/Sidebar'
+import RunnerProfile from './components/Profiles/RunnerProfile'
 
 const App = () => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggle = () => {
+    setIsOpen(!isOpen)
+  }
 
   return (
     <BrowserRouter>
     <Flex minHeight='100vh' direction='column' justifyContent='space-between'>
-    <Navbar />
+    <Sidebar isOpen={isOpen} toggle={toggle}/>
+    <Navbar toggle={toggle}/>
     <ScrollToTop />
     <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/events" element={<Events />} />
-        <Route path="/profile/:userId" element={<UserProfile />} />
+        <Route path="/profile" element={<UserProfile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/events/:eventId" element={<SingleEvent />} />
         <Route path="/training" element={<Training />} />
         <Route path="/events-for-you" element={<EventsForYou />} />
+        <Route path="/runner/:runnerID" element={<RunnerProfile />} />
       </Routes>
       <Footer />
       </Flex>

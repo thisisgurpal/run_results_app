@@ -11,7 +11,7 @@ import {
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
 
     const navigate = useNavigate()
 
@@ -23,34 +23,34 @@ const Navbar = () => {
         navigate('/')
       }
 
-      const gotToUserProfile = (e) => {
-        e.preventDefault()
-        const getProfileId = async () => {
-          try {
-            const token = localStorage.getItem('tinyhabits-token')
-            console.log(token)
-            const { data } = await axios.get('/api/auth/profile', {
-              'headers': {
-                'Authorization': 'Bearer ' + token
-              }
-            })
-            console.log('data', data)
-            navigate(`/profile/${data.id}`)
-            //  setUserProfileId(data.id)
-          } catch (err) {
-            console.log(err)
-          }
-        }
-        getProfileId()
+      // const gotToUserProfile = (e) => {
+      //   e.preventDefault()
+      //   const getProfileId = async () => {
+      //     try {
+      //       const token = localStorage.getItem('tinyhabits-token')
+      //       console.log(token)
+      //       const { data } = await axios.get('/api/auth/profile', {
+      //         'headers': {
+      //           'Authorization': 'Bearer ' + token
+      //         }
+      //       })
+      //       console.log('data', data)
+      //       navigate(`/profile/${data.id}`)
+      //       //  setUserProfileId(data.id)
+      //     } catch (err) {
+      //       console.log(err)
+      //     }
+      //   }
+      //   getProfileId()
     
-      }
+      // }
 
     return (
         <Nav>
             <NavLink to="/">
                 <h1>RunnersUniverse</h1>
             </NavLink>
-            <Bars />
+            <Bars onClick={toggle}/>
             <NavMenu>
                 <NavLink to="/events" activestyle="true">
                     Events
@@ -62,7 +62,7 @@ const Navbar = () => {
                     Events For You
                 </NavLink>
                 {userIsAuthenticated() ? 
-                <NavLink to="/profile" onClick={gotToUserProfile} activestyle="true">
+                <NavLink to="/profile" activestyle="true">
                     Profile
                 </NavLink>
             :
