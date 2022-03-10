@@ -15,3 +15,6 @@ class User_Runner(models.Model):
         on_delete = models.CASCADE,
         default = 1
     )
+
+    def __str__(self):
+        return f"{self.users} - {self.runners}"

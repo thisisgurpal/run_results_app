@@ -4,7 +4,7 @@ from django.db import models
 
 class Training(models.Model):
     title = models.CharField(max_length=100, default=None)
-    description = models.TextField(max_length=300, default=None)
+    description = models.TextField(max_length=2000, default=None)
     training_image = models.CharField(max_length=500, default=None)
     training_type = models.CharField(max_length=100, default=None, choices=[('strength', 'strength'), ('endurance', 'endurance'), ('nutrition', 'nutrition')])
     owner = models.ForeignKey(

@@ -7,12 +7,13 @@ from django.db import IntegrityError
 
 from .models import Run
 from .serializers.common import RunSerializer
+from .serializers.populated import PopulatedRunSerializer
 # Create your views here.
 class RunListView(APIView):
 
     def get(self, _request):
         runs = Run.objects.all()
-        serialized_runs = RunSerializer(runs, many = True)
+        serialized_runs = PopulatedRunSerializer(runs, many = True)
 
         print('runs', runs)
         print('serialised_runs', serialized_runs)

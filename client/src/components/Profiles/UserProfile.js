@@ -39,7 +39,7 @@ function UserProfile() {
                   </Flex></TabPanel>
                   <TabPanel display='flex' alignItems='center' p={4}><Flex direction='column' alignItems='flex-start'>
                   {data.user_runners.map(runner => 
-                    <Flex alignItems='center' key={runner.id}><Link to='/training'>
+                    <Flex alignItems='center' key={runner.id}><Link to={`/runner/${runner.id}`}>
                       <Text ml='10' fontSize='50px' id='position_name'>{runner.runners.first_name}</Text>
                     </Link></Flex>
                     )}

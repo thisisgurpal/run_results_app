@@ -4,8 +4,10 @@ from django.core.validators import MaxValueValidator
 
 
 class Run(models.Model):
+    days = models.PositiveIntegerField(default=None)
     hours = models.PositiveIntegerField(default=None)
     minutes = models.PositiveIntegerField(default=None, validators=[MaxValueValidator(60, 'enter correct value for minutes')])
+    seconds = models.PositiveIntegerField(default=None, validators=[MaxValueValidator(60, 'enter correct value for minutes')])
     position = models.CharField(max_length=300)
     year = models.PositiveIntegerField(default=None)
     runner = models.ForeignKey(

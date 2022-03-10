@@ -2,7 +2,7 @@ from ast import Try
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.exceptions import NotFound
+from rest_framework.exceptions import NotFound, PermissionDenied
 from django.db import IntegrityError
 
 from .models import User_Runner
@@ -38,3 +38,26 @@ class User_RunnerListView(APIView):
                 { "detail": "Unprocessable Entity" },
                 status=status.HTTP_422_UNPROCESSABLE_ENTITY
             )
+
+class User_RunnerDetailView(APIView):
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+
+    def get_user_runners(self, pk):
+        try:
+            return User_Runner.objects.get(pk=pk)
+        except User_Runner.DoesNotExist:
+            raise NotFound(detail="Favourite runner not found")
+
+    def delete(self, request, pk):
+        try:
+            user_runners_to_delete = self.get_user_runners(pk=pk)
+            if user_runners_to_delete.users != request.user:
+                raise PermissionDenied(detail="Unauthorised")
+            user_runners_to_delete.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+        except User_Runner.DoesNotExist:
+            raise NotFound(detail="Favourite runner not found")
+        except:
+            return Response({
+                "detail": "Failed to delete favourite runner"
+            }, status=status.HTTP_401_UNAUTHORIZED)

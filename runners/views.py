@@ -17,3 +17,16 @@ class RunnerListView(APIView):
         print('runners', runners)
         print('serialised_runners', serialized_runners)
         return Response(serialized_runners.data, status=status.HTTP_200_OK)
+
+class RunnerDetailView(APIView):
+
+    def get_runner(self, pk):
+        try:
+            return Runner.objects.get(pk=pk)
+        except Runner.DoesNotExist:
+            raise NotFound(detail="Runner not found")
+
+    def get(self, _request, pk):
+        runner = self.get_runner(pk)
+        serialized_runner = RunnerSerializer(runner)
+        return Response(serialized_runner.data, status=status.HTTP_200_OK)
