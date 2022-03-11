@@ -48,16 +48,21 @@ class User_RunnerDetailView(APIView):
         except User_Runner.DoesNotExist:
             raise NotFound(detail="Favourite runner not found")
 
+    def get(self, _request, pk):
+        user_runner = self.get_user_runners(pk)
+        serialized_user_runner = User_RunnerSerializer(user_runner)
+        return Response(serialized_user_runner.data, status=status.HTTP_200_OK)
+
     def delete(self, request, pk):
         try:
-            user_runners_to_delete = self.get_user_runners(pk=pk)
-            if user_runners_to_delete.users != request.user:
+            user_runner_to_delete = self.get_user_runners(pk=pk)
+            if user_runner_to_delete.users != request.user:
                 raise PermissionDenied(detail="Unauthorised")
-            user_runners_to_delete.delete()
+            user_runner_to_delete.delete()
             return Response(status=status.HTTP_204_NO_CONTENT)
         except User_Runner.DoesNotExist:
-            raise NotFound(detail="Favourite runner not found")
+            raise NotFound(detail="Runner not found")
         except:
             return Response({
-                "detail": "Failed to delete favourite runner"
+                "detail": "Failed to delete runner"
             }, status=status.HTTP_401_UNAUTHORIZED)

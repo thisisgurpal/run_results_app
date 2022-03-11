@@ -7,7 +7,7 @@ from comments.serializers.common import CommentSerializer
 
 class PopulatedEventSerializer(EventSerializer):
     distance = DistanceSerializer()
-    requirement = RequirementSerializer()
+    requirement = RequirementSerializer(many=True)
     runs = PopulatedRunSerializer(many=True)
     owner = UserSerializer()
     comments = CommentSerializer(many=True)

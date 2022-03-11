@@ -30,7 +30,7 @@ body {
 .ccard {
   width: 100ch;
   height: 60ch;
-  background: hotpink;
+  background: rgb(0, 0, 0);
   border-radius: 5px;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
   transition: box-shadow 0.5s;
@@ -41,17 +41,12 @@ body {
   }
 }
 
-.ccard:hover {
-    background: rgb(255, 255, 255);
-}
-
 #leva__root {
   display: none;
 }
 
 #home_title {
   font-family: 'Inter', sans-serif;
-  font-size: 90px;
   color: #fff;
   background: linear-gradient(to right, rgb(197, 197, 197), rgb(197, 197, 197) 50%, rgb(255, 255, 255) 50%);
   background-clip: text;
@@ -61,6 +56,7 @@ body {
   background-position: 100%;
   transition: background-position 275ms ease;
   text-decoration: none; // text decorations are clipped in WebKit browsers
+
   &:hover {
     background-position: 0 100%;
     transform: scale(1.02);
@@ -69,11 +65,49 @@ body {
 
 .home_image_title{
   font-family: 'Plaster', cursive;
-  font-size: 60px;
+  font-size: 50px;
   color: black;
+  line-height: 100px;
 }
 
 .home_image_desc{
   font-family: 'Comfortaa', cursive;
   color: black;
+  font-size: 18px;
+  width: 80%;
 }
+
+@media screen and ( max-width: 992px ){
+  .ccard {
+    width: 67ch;
+      height: 54ch;
+
+  }
+  }
+
+  @media screen and ( max-width: 700px ){
+    .ccard {
+      width: 47ch;
+      height: 37ch;
+  
+    }
+    }
+
+    @media screen and ( max-width: 450px ){
+      .ccard {
+        width: 28ch;
+        height: 24ch;
+      }
+      }
+
+    @media screen and ( max-width: 992px ){
+      .home_image_title{
+        line-height: 85px;
+      }
+      }
+    
+      @media screen and ( max-width: 700px ){
+        .home_image_title{
+          line-height: 60px;
+        }
+        }

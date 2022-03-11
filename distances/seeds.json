@@ -1,0 +1,18 @@
+[
+    {
+        "model": "distances.distance",
+        "pk": 1,
+        "fields": {
+            "distance": "100",
+            "measurement": "miles"
+        }
+    },
+    {
+        "model": "distances.distance",
+        "pk": 2,
+        "fields": {
+            "distance": "26.2",
+            "measurement": "miles"
+        }
+    }
+]

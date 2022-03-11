@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'user_runners',
     'comments',
     'training',
-    'fav_training'
+    'fav_training',
+    'event_links'
 ]
 
 MIDDLEWARE = [

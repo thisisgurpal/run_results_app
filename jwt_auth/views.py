@@ -76,7 +76,7 @@ class ProfileView(APIView):
 
     def get(self, _request, pk):
         user = self.get_user(pk=pk)
-        serialized_user = UserSerializer(user)
+        serialized_user = PopulatedUserSerializer(user)
         print('user', serialized_user)
         return Response(serialized_user.data, status=status.HTTP_200_OK)
 

@@ -5,7 +5,8 @@ from django.db import models
 class Event(models.Model):
     name = models.CharField(max_length=100, default=None)
     description = models.TextField(max_length=1000, default=None)
-    location = models.CharField(max_length=100, default=None)
+    city = models.CharField(max_length=100, default=None)
+    country = models.CharField(max_length=100, default=None)
     event_image = models.CharField(max_length=500, default=None)
     new_event_date = models.DateField(default=None)
     distance = models.ForeignKey(
@@ -14,11 +15,11 @@ class Event(models.Model):
         on_delete = models.CASCADE,
         default = 1
     )
-    requirement = models.ForeignKey(
+    requirement = models.ManyToManyField(
         "requirements.Requirement",
         related_name = "events",
-        on_delete = models.CASCADE,
-        default = 1
+        # on_delete = models.CASCADE,
+        # default = 1
     )
     owner = models.ForeignKey(
         "jwt_auth.User",

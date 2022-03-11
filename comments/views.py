@@ -7,6 +7,7 @@ from django.db import IntegrityError
 
 from .models import Comment
 from .serializers.common import CommentSerializer
+from .serializers.populated import PopulatedCommentSerializer
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.exceptions import NotFound, PermissionDenied
 
@@ -16,7 +17,7 @@ class CommentListView(APIView):
 
     def get(self, _request):
         comments = Comment.objects.all()
-        serialized_comments = CommentSerializer(comments, many = True)
+        serialized_comments = PopulatedCommentSerializer(comments, many = True)
 
         print('comments', comments)
         print('serialised_comments', serialized_comments)

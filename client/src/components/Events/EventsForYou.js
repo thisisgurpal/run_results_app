@@ -1,46 +1,35 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Box, Heading, AlertIcon, Alert, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, Select, Flex, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Button, Text } from '@chakra-ui/react'
+import { Image, Input, Box, Heading, AlertIcon, Alert, NumberInput, NumberInputField, NumberInputStepper, NumberIncrementStepper, NumberDecrementStepper, Select, Flex, Slider, SliderTrack, SliderFilledTrack, SliderThumb, Button, Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
 function EventsForYou() {
 
     const [allPRS, setAllPRS] = useState([])
     const [eventsData, setEventsData] = useState({})
-    const [filterEventsData, setFilterEventsData] = useState([])
+    const [filterEventsData, setFilterEventsData] = useState({})
     const [prs, setPrs] = useState({
-        metric: null,
-        distance: null,
-        days: '',
         hours: '',
         minutes: '',
-        seconds: ''
+        seconds: '',
+        age: ''
     })
 
     const [errorPR, setErrorPR] = useState({
-        metric: null,
-        distance: null,
-        days: '',
         hours: '',
         minutes: '',
-        seconds: ''
+        seconds: '',
+        age: ''
     })
 
-    let metric_error
-    let distance_error
-    let days_error
     let hours_error
     let minutes_error
     let seconds_error
+    let age_error
 
     // const [metric, setMetric] = React.useState(0)
 
     // const [distance, setDistance] = React.useState(0)
-
-    const handleDaysChange = (value) => {
-        setPrs({ ...prs, days: value })
-        setErrorPR({ ...errorPR, days: '' })
-    }
 
     const handleHoursChange = (value) => {
         setPrs({ ...prs, hours: value })
@@ -57,15 +46,9 @@ function EventsForYou() {
         setErrorPR({ ...errorPR, seconds: '' })
     }
 
-    function handleOptionChange(e) {
-        if (e.target.id === 'metric') {
-            setPrs({ ...prs, metric: e.target.value })
-            setErrorPR({ ...errorPR, metric: null })
-        } else if (e.target.id === 'distance') {
-            setPrs({ ...prs, distance: e.target.value })
-            setErrorPR({ ...errorPR, distance: null })
-        }
-        // setFilterHabits({ ...filterHabits, [e.target.name]: e.target.value })
+    const handleAgeChange = (value) => {
+        setPrs({ ...prs, age: value })
+        setErrorPR({ ...errorPR, age: '' })
     }
 
     useEffect(() => {
@@ -79,26 +62,30 @@ function EventsForYou() {
 
     function filterEvents() {
         const filtered_events = eventsData.filter(event =>
-            allPRS.some(pr =>
-                ((event.requirement.hours * 60) + event.requirement.minutes) >= ((parseInt(pr.hours * 60)) + parseInt(pr.minutes)) &&
-                event.distance.distance === pr.distance &&
-                event.distance.measurement === pr.metric
-            )
-        )
+            event.distance.distance === '26.2' && event.requirement.some(requirement => {
+                if (prs.age >= 80){
+                    return(
+                        parseInt(prs.age) >= parseInt(requirement.age_group.split('-')[0]) &&
+                        ((parseInt(prs.hours)  * 60) + parseInt(prs.minutes) + (parseInt(prs.seconds)/60)) <= ((parseInt(requirement.hours)  * 60) + parseInt(requirement.minutes) + (parseInt(requirement.seconds)/60))
+                    )
+                   
+                } else {
+                    return (
+                        parseInt(prs.age) <= parseInt(requirement.age_group.split('-')[1]) &&
+                parseInt(prs.age) >= parseInt(requirement.age_group.split('-')[0]) &&
+                ((parseInt(prs.hours)  * 60) + parseInt(prs.minutes) + (parseInt(prs.seconds)/60)) <= ((parseInt(requirement.hours)  * 60) + parseInt(requirement.minutes) + (parseInt(requirement.seconds)/60))
+                    )
+                } 
+            }
+                
+                ))
+            
+                // ((event.requirement.hours * 60) + event.requirement.minutes + (event.requirement.seconds / 60)) >= ((parseInt(prs.hours)  * 60) + parseInt(prs.minutes) + (parseInt(prs.seconds)/60))
         console.log(filtered_events)
         setFilterEventsData(filtered_events)
     }
 
     function addPR() {
-        if (!prs.metric) {
-            metric_error = 'Choose a metric'
-        } else metric_error = null
-        if (!prs.distance) {
-            distance_error = 'Choose a distance'
-        } else distance_error = null
-        if (prs.days === '') {
-            days_error = 'Select days'
-        } else days_error = null
         if (prs.hours === '') {
             hours_error = 'Select hours'
         } else hours_error = null
@@ -108,32 +95,20 @@ function EventsForYou() {
         if (prs.seconds === '') {
             seconds_error = 'Select seconds'
         } else seconds_error = null
+        if (prs.age === '') {
+            age_error = 'Select age'
+        } else age_error = null
 
-        if (prs.metric && prs.distance && prs.days !== '' && prs.hours !== '' && prs.minutes !== '' && prs.seconds !== '') {
-
-            allPRS.push(prs)
-            console.log(prs)
-            console.log(allPRS)
-            setAllPRS(allPRS)
-            setPrs({
-                metric: null,
-                distance: null,
-                days: '',
-                hours: '',
-                minutes: '',
-                seconds: ''
-            })
+        if (prs.hours !== '' && prs.minutes !== '' && prs.seconds !== '' && prs.age !== '') {
 
             filterEvents()
 
         } else {
             setErrorPR({
-                metric: metric_error,
-                distance: distance_error,
-                days: days_error,
                 hours: hours_error,
                 minutes: minutes_error,
-                seconds: seconds_error
+                seconds: seconds_error,
+                age: age_error
             })
         }
 
@@ -152,30 +127,11 @@ function EventsForYou() {
         <Flex minHeight='100vh' w='100%' direction='column' alignItems='center'>
             <Flex direction='row' w='100%' justifyContent='center' alignItems='center'>
                 <Flex id='input_prs' p='20' borderRadius='10px' m='10' direction='column' w='600px'>
-                    <Text lineHeight= '100%' id='prs_input_title'>Enter your best runs:</Text>
+                    <Text textAlign='center' lineHeight= '100%' id='prs_input_title'>Enter your best runs:</Text>
+                    <Text textAlign='center' mt='5'>Find out what events you are qualified to run in!</Text>
                     <Flex direction='row' alignItems='center' mt={5}>
-                        <Text w='100px' mr='8'>Metric:</Text>
-                        <Select backgroundColor='white' color='black' value={prs.metric ? Select.value : ''} onChange={handleOptionChange} id='metric' placeholder='Select option'>
-                            <option value='miles'>Miles</option>
-                            <option value='kilometers'>Kilometers</option>
-                        </Select>
-                    </Flex>
-                    {errorPR.metric && <Alert status='error' color='black' h='30px' mt={4}><AlertIcon />{errorPR.metric}</Alert>}
-                    <Flex direction='row' alignItems='center' mt={5}>
-                        <Text w='100px' mr='8'>Distance:</Text>
-                        <Select backgroundColor='white' color='black' value={prs.distance ? Select.value : ''} onChange={handleOptionChange} id='distance' placeholder='Select option'>
-                            <option value='240'>240</option>
-                            <option value='200'>200</option>
-                            <option value='150'>150</option>
-                            <option value='100'>100</option>
-                            <option value='50'>50</option>
-                            <option value='26.2'>26.2</option>
-                        </Select>
-                    </Flex>
-                    {errorPR.distance && <Alert status='error' color='black' h='30px' mt={4}><AlertIcon />{errorPR.distance}</Alert>}
-                    <Flex direction='row' alignItems='center' mt={5}>
-                        <Text w='100px' mr='8'>Days:</Text>
-                        <NumberInput maxW='100px' max={20} mr='2rem' value={prs.days} onChange={handleDaysChange}>
+                        <Text w='100px' mr='8'>Age:</Text>
+                        <NumberInput maxW='100px' min={0} max={150} mr='2rem' value={prs.age} onChange={handleAgeChange}>
                             <NumberInputField />
                             <NumberInputStepper>
                                 <NumberIncrementStepper />
@@ -185,20 +141,21 @@ function EventsForYou() {
                         <Slider
                             flex='1'
                             focusThumbOnChange={false}
-                            value={prs.days}
-                            onChange={handleDaysChange}
-                            max={20}
+                            value={prs.age}
+                            onChange={handleAgeChange}
+                            max={150}
+                            min={0}
                         >
                             <SliderTrack>
                                 <SliderFilledTrack />
                             </SliderTrack>
-                            <SliderThumb fontSize='sm' boxSize='32px' children={prs.days} />
+                            <SliderThumb fontSize='sm' boxSize='32px' children={prs.age} />
                         </Slider>
                     </Flex>
-                    {errorPR.days && <Alert status='error' color='black' h='30px' mt={4}><AlertIcon />{errorPR.days}</Alert>}
+                    {errorPR.age && <Alert status='error' color='black' h='30px' mt={4}><AlertIcon />{errorPR.age}</Alert>}
                     <Flex direction='row' alignItems='center' mt={5}>
                         <Text w='100px' mr='8'>Hours:</Text>
-                        <NumberInput maxW='100px' max={60} mr='2rem' value={prs.hours} onChange={handleHoursChange}>
+                        <NumberInput maxW='100px' min={0} max={60} mr='2rem' value={prs.hours} onChange={handleHoursChange}>
                             <NumberInputField />
                             <NumberInputStepper>
                                 <NumberIncrementStepper />
@@ -211,6 +168,7 @@ function EventsForYou() {
                             value={prs.hours}
                             onChange={handleHoursChange}
                             max={60}
+                            min={0}
                         >
                             <SliderTrack>
                                 <SliderFilledTrack />
@@ -221,7 +179,7 @@ function EventsForYou() {
                     {errorPR.hours && <Alert status='error' color='black' h='30px' mt={4}><AlertIcon />{errorPR.hours}</Alert>}
                     <Flex direction='row' alignItems='center' mt={5}>
                         <Text w='100px' mr='8'>Minutes:</Text>
-                        <NumberInput maxW='100px' max={60} mr='2rem' value={prs.minutes} onChange={handleMinutesChange}>
+                        <NumberInput maxW='100px' min={0} max={60} mr='2rem' value={prs.minutes} onChange={handleMinutesChange}>
                             <NumberInputField />
                             <NumberInputStepper>
                                 <NumberIncrementStepper />
@@ -234,6 +192,7 @@ function EventsForYou() {
                             value={prs.minutes}
                             onChange={handleMinutesChange}
                             max={60}
+                            min={0}
                         >
                             <SliderTrack>
                                 <SliderFilledTrack />
@@ -244,7 +203,7 @@ function EventsForYou() {
                     {errorPR.minutes && <Alert status='error' color='black' h='30px' mt={4}><AlertIcon />{errorPR.minutes}</Alert>}
                     <Flex direction='row' alignItems='center' mt={5}>
                         <Text w='100px' mr='8'>Seconds:</Text>
-                        <NumberInput maxW='100px' max={60} mr='2rem' value={prs.seconds} onChange={handleSecondsChange}>
+                        <NumberInput maxW='100px' min={0} max={60} mr='2rem' value={prs.seconds} onChange={handleSecondsChange}>
                             <NumberInputField />
                             <NumberInputStepper>
                                 <NumberIncrementStepper />
@@ -257,6 +216,7 @@ function EventsForYou() {
                             value={prs.seconds}
                             onChange={handleSecondsChange}
                             max={60}
+                            min={0}
                         >
                             <SliderTrack>
                                 <SliderFilledTrack />
@@ -269,45 +229,27 @@ function EventsForYou() {
                         <Button backgroundColor='#FFBF00' mt='10' w='200px' color='black' onClick={addPR}>Add</Button>
                     </Flex>
                 </Flex>
-                <Box>
-                    {Object.keys(allPRS).length ?
-                        <>
-                            <Box w='900px' h='725px' backgroundColor='#363636' borderRadius='10px'>
-                                <Box p='30px' pl='50px'>
-                            <Text color='white' id='prs_title'>Your runs:</Text>
-                                {allPRS.map(pr => {
-                                    return (
-                                        <Flex key={allPRS.indexOf(pr)} direction='row' alignItems='center'>
-                                            <Text color='white' id='prs' >{pr.distance}{pr.metric} {pr.days}:{pr.hours}:{pr.minutes}:{pr.seconds}</Text>
-                                            <Button onClick={deletePR} value={pr.distance + pr.metric} ml='8' bg='white' color='#black'>Delete</Button>
-                                        </Flex>
-                                    )
-                                })}
-                                </Box>
-                            </Box>
-                        </>
-                        :
-                        ''
-                    }
-                </Box>
             </Flex>
             <>
                 {Object.keys(filterEventsData).length ?
-                    <Flex direction='row' flexWrap='wrap'>
-                        {filterEventsData.map(event => {
-                            return (
-                                <Link boxshadow='xl' key={event.id} to={`/events/${event.id}`}>
-                                    <Flex name="actions" p='4' mb='5' color='white' bgGradient='linear(to-t, red.200, pink.500)' width='300px' height='320px' flexDirection='column' borderWidth='1px' alignItems='center' justifyContent='flex-start' boxshadow='2xl' borderRadius='10'>
-                                        <Box name="headline" pl='4' pr='4' mb='4' width=''>
-                                            <Heading textAlign='center' name='eventName' color='primary' mt='0' size='lg'>
-                                                {event.name}
-                                            </Heading>
-                                        </Box>
-                                    </Flex>
-                                </Link>
-                            )
-                        })}
-                    </Flex>
+                    <Flex ml='2' direction='column' alignItems='center' flexWrap='wrap' width='80%' h='800px'>
+                    {filterEventsData.map(event => {
+                      return (
+                        <Box key={event.id} h='25%' w='100%' id='events_small'>
+                          <Link to={`/events/${event.id}`}>
+                            <hr color='white' width='100%' height='1px' />
+                            <Flex name="actions" p='4' mb='5' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='flex-start'>
+                              <Image mr='10' src={event.event_image} h='100%' alt=''></Image>
+                              <Text textAlign='center'>
+                                {event.name}
+                              </Text>
+                            </Flex>
+                          </Link>
+                        </Box>
+                      )
+                    })}
+                    <hr color='white' width='100%' height='1px' />
+                  </Flex>
                     :
                     ''
                 }

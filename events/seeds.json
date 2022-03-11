@@ -1,0 +1,110 @@
+[
+    {
+        "model": "events.event",
+        "pk": 3,
+        "fields": {
+            "name": "Boston Marathon",
+            "description": "The Boston Marathon is the world's oldest annual marathon and ranks as one of the world's most prestigious road racing events. The B.A.A. continues to manage this American classic, which has been sponsored by John Hancock Financial since 1986. The Boston Marathon has distinguished itself as the pinnacle event within the sport of road racing by virtue of its traditions, longevity, and method of gaining entry into the race (via qualification).",
+            "city": "Boston",
+            "country": "USA",
+            "event_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646925550/project_4_sei61/merlin_170462463_dc158e56-d218-4586-9be6-970e6ec2cd8b-mobileMasterAt3x_uyqpoj.jpg",
+            "new_event_date": "2022-04-18",
+            "distance": 2,
+            "owner": 1,
+            "requirement": [
+                4,
+                5,
+                6,
+                7,
+                8,
+                9,
+                10,
+                11,
+                12,
+                13,
+                14,
+                15,
+                16,
+                17,
+                18,
+                19,
+                20,
+                21,
+                22,
+                23,
+                24,
+                25
+            ]
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 4,
+        "fields": {
+            "name": "London Marathon",
+            "description": "London Marathon, annual 26.2-mile (42.2-km) footrace through the streets of London that takes place in April. The event was first held in 1981 and is one of the world’s six major marathons, along with the Berlin, Boston, Chicago, New York City, and Tokyo races.",
+            "city": "London",
+            "country": "UK",
+            "event_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646734486/project_4_sei61/6720_diuxqu.webp",
+            "new_event_date": "2022-10-02",
+            "distance": 2,
+            "owner": 1,
+            "requirement": [
+                26,
+                27,
+                28,
+                29,
+                30,
+                31,
+                32,
+                33,
+                34,
+                35,
+                36,
+                37,
+                38,
+                39,
+                40,
+                41,
+                42,
+                43,
+                44,
+                45
+            ]
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 5,
+        "fields": {
+            "name": "Leadville 100",
+            "description": "The legendary “Race Across The Sky” 100-mile run is where it all started back in 1983. This is it. The race where legends are created and limits are tested. One hundred miles of extreme Colorado Rockies terrain — from elevations of 9,200 to 12,600 feet. You will give the mountain respect, and earn respect from all.",
+            "city": "Leadville",
+            "country": "USA",
+            "event_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646940155/project_4_sei61/leadville-trail-100_vz8n5v.jpg",
+            "new_event_date": "2022-08-20",
+            "distance": 1,
+            "owner": 1,
+            "requirement": [
+                46
+            ]
+        }
+    },
+    {
+        "model": "events.event",
+        "pk": 6,
+        "fields": {
+            "name": "North Downs Way 100",
+            "description": "The NDW100 is a 100 mile continuous trail run along the North Downs Way. The course travels from Farnham in the Surrey Hills to Ashford in Kent. Total climb of 10,000 feet. The race begins in Farnham at the Western end of the North Downs.",
+            "city": "Guildford",
+            "country": "UK",
+            "event_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646940644/project_4_sei61/images_lzvide.jpg",
+            "new_event_date": "2022-08-06",
+            "distance": 1,
+            "owner": 1,
+            "requirement": [
+                46
+            ]
+        }
+    }
+]

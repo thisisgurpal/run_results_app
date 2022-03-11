@@ -1,5 +1,5 @@
-import React from "react"
-import { userIsAuthenticated } from '../helper/auth'
+import React, { useState, useEffect } from "react"
+import { userIsAuthenticated, getTokenFromLocalStorage } from '../helper/auth'
 import { 
     Nav, 
     NavLink, 
@@ -14,6 +14,7 @@ import axios from 'axios'
 const Navbar = ({ toggle }) => {
 
     const navigate = useNavigate()
+    const [ userId, setUserId] = useState()
 
     const handleLogout = (e) => {
         e.preventDefault()
@@ -23,27 +24,20 @@ const Navbar = ({ toggle }) => {
         navigate('/')
       }
 
-      // const gotToUserProfile = (e) => {
-      //   e.preventDefault()
-      //   const getProfileId = async () => {
-      //     try {
-      //       const token = localStorage.getItem('tinyhabits-token')
-      //       console.log(token)
-      //       const { data } = await axios.get('/api/auth/profile', {
-      //         'headers': {
-      //           'Authorization': 'Bearer ' + token
-      //         }
-      //       })
-      //       console.log('data', data)
-      //       navigate(`/profile/${data.id}`)
-      //       //  setUserProfileId(data.id)
-      //     } catch (err) {
-      //       console.log(err)
-      //     }
-      //   }
-      //   getProfileId()
-    
-      // }
+
+      useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get(`/api/auth/profile/`,
+      {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        }
+      })
+      console.log(data.id)
+      setUserId(data.id)
+    }
+    getData()
+  }, [])
 
     return (
         <Nav>
@@ -59,10 +53,10 @@ const Navbar = ({ toggle }) => {
                     Training & Nutrition
                 </NavLink>
                 <NavLink to="/events-for-you" activestyle="true">
-                    Events For You
+                    Marathons For You
                 </NavLink>
                 {userIsAuthenticated() ? 
-                <NavLink to="/profile" activestyle="true">
+                <NavLink to={`/profile/${userId}`} activestyle="true">
                     Profile
                 </NavLink>
             :
