@@ -11,7 +11,7 @@ from .serializers.common import UserSerializer
 from datetime import datetime, timedelta
 from django.conf import settings
 import jwt
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from .serializers.populated import PopulatedUserSerializer
 User = get_user_model()
 

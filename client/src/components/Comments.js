@@ -152,7 +152,7 @@ const Comments = () => {
         </>
       }
       {comments ?
-        <Box mt='6' p='4' w='50%' rounded='lg'>
+        <Box mt='6' p='4' w='50%' background='#101010' rounded='lg'>
 
           <Text color='#fff' mb='4'>Comments</Text>
           {comments.length ?

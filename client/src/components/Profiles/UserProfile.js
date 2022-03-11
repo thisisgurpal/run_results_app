@@ -30,11 +30,9 @@ function UserProfile() {
   const deleteComment = async (e) => {
     e.preventDefault()
     try {
-      const token = localStorage.getItem('tinyhabits-token')
-      console.log(token)
       await axios.delete(`/api/comments/${e.target.id}`, {
-        'headers': {
-          'Authorization': 'Bearer ' + token
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         }
       }) //Posting the data from the form
       setCommentDeleted(true)

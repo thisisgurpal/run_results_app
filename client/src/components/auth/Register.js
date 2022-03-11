@@ -26,8 +26,11 @@ const Register = () => {
     last_name: '',
     email: '',
     password: '',
-    passwordConfirmation: '',
+    password_confirmation: '',
     profile_image: '',
+    user_runners: [],
+    fav_training: [],
+    comments: []
   })
 
   const [formError, setFormError] = useState({
@@ -36,7 +39,7 @@ const Register = () => {
     last_name: '',
     email: '',
     password: '',
-    passwordConfirmation: '',
+    password_confirmation: '',
     profile_image: '',
   })
   const handleChange = (e) => {
@@ -52,19 +55,20 @@ const Register = () => {
 
 
   const setTokenToLocalStorage = (token) => {
-    window.localStorage.setItem('tinyhabits-token', token)
+    window.localStorage.setItem('token', token)
   }
 
   const handleSubmit = async (e) => {
     // if (formData.password && formData.passwordConfirmation && formData.password !== formData.passwordConfirmation)
     //   setFormError({ ...formError, passwordConfirmation: 'passwords don\'t match' })
+    console.log(formData)
     e.preventDefault()
     if (formData.profile_image) {
       try {
-        const { data } = await axios.post('/api/auth/register', formData) //Posting the data from the form
+        const { data } = await axios.post('/api/auth/register/', formData) //Posting the data from the form
         console.log('token', data.token)
         setTokenToLocalStorage(data.token) // pass on the token to the localStorage
-        navigate('/')
+        navigate('/login')
       } catch (err) {
         const arr = Object.keys(err.response.data.errors)
         const key = (arr[0])
@@ -81,7 +85,7 @@ const Register = () => {
   }
 
   return (
-    <><Flex width="full" align="center" justifyContent="center">
+    <><Flex minHeight='100vh' width="full" align="center" justifyContent="center">
       <Box background='white' p={8} maxWidth="500px" borderWidth={1} borderRadius={8} boxShadow="2xl">
         <>
           <Box textAlign="center">
@@ -121,9 +125,9 @@ const Register = () => {
               </FormControl>
               {/* Password Confirmation */}
               <FormControl isRequired mt={2}>
-                <FormLabel htmlFor='passwordConfirmation'>Password Confirmation</FormLabel>
-                <Input onChange={handleChange} type="password" name="passwordConfirmation" placeholder='Password Confirmation' defaultValue={formData.passwordConfirmation} />
-                {formError.passwordConfirmation && <Alert status='error' mt={4}>{formError.passwordConfirmation}</Alert>}
+                <FormLabel htmlFor='password_confirmation'>Password Confirmation</FormLabel>
+                <Input onChange={handleChange} type="password" name="password_confirmation" placeholder='Password Confirmation' defaultValue={formData.password_confirmation} />
+                {formError.password_confirmation && <Alert status='error' mt={4}>{formError.password_confirmation}</Alert>}
               </FormControl>
               <FormControl isRequired mt={6}>
                 <FormLabel htmlFor='picture'>Add Profile Picture</FormLabel>
@@ -135,7 +139,7 @@ const Register = () => {
               </FormControl>
               {/* Error + Button */}
               {!imageUploading ?
-                <Button type="submit" colorScheme='blue' width="full" mt={4}>Register</Button>
+                <Button type="submit" background='black' color='white' width="full" mt={4}>Register</Button>
                 :
                 <Spinner mt='4' />
               }

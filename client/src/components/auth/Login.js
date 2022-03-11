@@ -33,7 +33,7 @@ const Login = () => {
   // Saves the token from handleSubmit in the localStorage
   
   const setTokenToLocalStorage = (token) => {
-    window.localStorage.setItem('tinyhabits-token', token)
+    window.localStorage.setItem('token', token)
   }
 
   const handleSubmit = async (e) => {
@@ -51,7 +51,7 @@ const Login = () => {
   }
 
   return (
-    <><Flex width="full" align="center" justifyContent="center">
+    <><Flex minHeight='100vh' width="full" align="center" justifyContent="center">
       <Box background='white' p={8} maxWidth="500px" borderWidth={1} borderRadius={8} boxShadow="2xl">
         <>
           <Box textAlign="center">
@@ -71,7 +71,7 @@ const Login = () => {
               </FormControl>
               {/* Error + Button */}
               {formError && <Alert status='error' mt={4}>{formError}</Alert>}
-              <Button colorScheme='blue' type="submit" width="full" mt={4}>Login</Button>
+              <Button background='black' color='white' type="submit" width="full" mt={4}>Login</Button>
             </form>
           </Box>
         </>

@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { useSpring, animated, config } from "@react-spring/web";
 import { useControls } from "leva";
-import { Image, Flex, Box, Text, Container } from '@chakra-ui/react'
+import { Image, Flex, Box, Text, Container, Spinner } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { createBreakpoints } from '@chakra-ui/theme-tools'
@@ -25,6 +25,7 @@ const trans = (x, y, s) =>
 function Home() {
 
   const [eventsData, setEventsData] = useState({})
+  const [trainingData, setTrainingData] = useState({})
   // events configs
   const configList_events = Object.keys(config);
   const ref_events = useRef(null);
@@ -61,11 +62,22 @@ function Home() {
     getEvents()
   }, [])
 
+  useEffect(() => {
+    const getTraining = async () => {
+      const { data } = await axios.get('/api/training/') // * <-- replace with your endpoint
+      console.log(data)
+      setTrainingData(data)
+    }
+    getTraining()
+  }, [])
+
   return (
-    <Flex w='100%' direction='column' alignItems='center' justifyContent='center'>
+    <>
+    {Object.keys(eventsData).length ?
+      <Flex minHeight='100vh' w='100%' direction='column' alignItems='center' justifyContent='center'>
       {Object.keys(eventsData).length &&
         <>
-          <Link to='/events'><Text mt='10' textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='home_title'>RUNNING EVENTS</Text></Link><Flex m='10' w='100%'>
+          <Link to='/events'><Text mt={{ base: '7', sm: '8', md: '9', lg: '10'}} textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '70px'}} id='home_title'>RUNNING EVENTS</Text></Link><Flex h={{ base: '100%'}} m={{ base: '5', sm: '7', md: '8', lg: '10'}} w='100%'>
             <div className="ccard-main" ref={ref_events}>
               <Link to={`/events/${eventsData[0].id}`}>
                 <animated.div
@@ -81,30 +93,34 @@ function Home() {
             <Box display='flex' justifyContent='center' alignItems='center' w='50%' h='100%'>
               <Box opacity="0.8" backgroundColor='black' w='100%' h='100%'></Box>
               </Box> */}
-              <Flex display={{ base: 'inline-block', lg: 'none' }} position='relative' backgroundColor='#FFBF00' borderTopRadius='10px' direction='column' w='100%'>
-              <Image w='100%' borderTopLeftRadius='10px' src={eventsData[0].event_image}></Image>
-              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} textAlign='center' className="home_image_title" >{eventsData[0].name}</Text>
+              <Flex display={{ base: 'inline-block', lg: 'none' }} position='relative' bgGradient='linear(to-br, #FFBF00, #ffde7a)'  borderRadius='5px' direction='column' w='100%'>
+              <Image w='100%' borderTopRadius='5px' src={eventsData[0].event_image}></Image>
               <Flex justifyContent='center'>
-                {/* <Text w='80%' fontSize='15px' mb='10'>{eventsData[0].description}</Text> */}
+              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} textAlign='center' mt='5' width='90%' className="home_image_title" >{eventsData[0].name}</Text>
+                </Flex>
+              <Flex justifyContent='center'>
+                <Text w='80%' fontSize='15px' mb='10'>{eventsData[0].description}</Text>
               </Flex>
             </Flex>
-                  <Flex display={{ base: 'none', lg: 'block'}} justifyContent='center' alignItems='center' h='100%' backgroundColor='#FFBF00' position='absolute' w='50%'>
+                  <Flex display={{ base: 'none', lg: 'block'}} justifyContent='center' alignItems='center' h='100%' borderLeftRadius='5px' bgGradient='linear(to-br, #FFBF00, #ffde7a)' position='absolute' w='50%'>
                     <Flex direction='column'>
-                      <Text mb='5' mt='5' textAlign='center' lineHeight='100%' className="home_image_title">{eventsData[0].name}</Text>
+                    <Flex justifyContent='center'>
+              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} textAlign='center' mt='5' w='90%' className="home_image_title" >{eventsData[0].name}</Text>
+                </Flex>
                       <Flex justifyContent='center'>
                         <Text className="home_image_desc">{eventsData[0].description}</Text>
                       </Flex>
                     </Flex>
                   </Flex>
-                  <Image display={{ base: 'none', lg: 'block'}} w='100%' h='100%' src={eventsData[0].event_image} alt=''></Image>
+                  <Image borderRightRadius='5px' display={{ base: 'none', lg: 'block'}} w='100%' h='100%' src={eventsData[0].event_image} alt=''></Image>
                 </animated.div>
               </Link>
             </div>
           </Flex>
         </>}
-        {Object.keys(eventsData).length &&
+        {Object.keys(trainingData).length &&
         <>
-          <Link to='/events'><Text mt='10' textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='home_title'>TRAINING PLANS</Text></Link><Flex m='10' w='100%'>
+          <Link to='/events'><Text mt={{ base: '7', sm: '8', md: '9', lg: '10'}} textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '70px'}} id='home_title'>TRAINING PLANS</Text></Link><Flex h={{ base: '100%'}} m={{ base: '5', sm: '7', md: '8', lg: '10'}} w='100%'>
           <div className="ccard-main" ref={ref_training}>
           <Link to='/training'>
             <animated.div
@@ -120,30 +136,44 @@ function Home() {
             <Box display='flex' justifyContent='center' alignItems='center' w='50%' h='100%'>
               <Box opacity="0.8" backgroundColor='black' w='100%' h='100%'></Box>
               </Box> */}
-              <Flex display={{ base: 'inline-block', lg: 'none' }} position='relative' backgroundColor='#FFBF00' borderTopRadius='10px' direction='column' w='100%'>
-              <Image w='100%' borderTopLeftRadius='10px' src={eventsData[0].event_image}></Image>
-              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} textAlign='center' className="home_image_title" >{eventsData[0].name}</Text>
+              <Flex display={{ base: 'inline-block', lg: 'none' }} position='relative' bgGradient='linear(to-br, #FFBF00, #ffde7a)' borderRadius='5px' direction='column' w='100%'>
+              <Image w='100%' borderTopRadius='5px' src={trainingData.filter(training => training.training_type !== 'nutrition')[0].training_image}></Image>
               <Flex justifyContent='center'>
-                {/* <Text w='80%' fontSize='15px' mb='10'>{eventsData[0].description}</Text> */}
+              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} textAlign='center' width='90%' mt='5' className="home_image_title" >{trainingData.filter(training => training.training_type !== 'nutrition')[0].title}</Text>
+                </Flex>
+              
+              <Flex justifyContent='center'>
+                <Text w='80%' fontSize='15px' mb='10'>
+                  {trainingData.filter(training => training.training_type !== 'nutrition')[0].description.split('.')[0] 
+                  + '. ' 
+                  + trainingData.filter(training => training.training_type !== 'nutrition')[0].description.split('.')[1] 
+                  + '.'}
+                  </Text>
               </Flex>
             </Flex>
-                  <Flex display={{ base: 'none', lg: 'block'}} justifyContent='center' alignItems='center' h='100%' backgroundColor='#FFBF00' position='absolute' w='50%'>
+                  <Flex display={{ base: 'none', lg: 'block'}} justifyContent='center' alignItems='center' h='100%' borderLeftRadius='5px' bgGradient='linear(to-br, #FFBF00, #ffde7a)' position='absolute' w='50%'>
                     <Flex direction='column'>
-                      <Text mb='5' mt='5' textAlign='center' lineHeight='100%'  className="home_image_title">{eventsData[0].name}</Text>
+                    <Flex justifyContent='center'>
+              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} textAlign='center' width='90%' mt='5' className="home_image_title" >{trainingData.filter(training => training.training_type !== 'nutrition')[0].title}</Text>
+                </Flex>
                       <Flex justifyContent='center'>
-                        <Text className="home_image_desc">{eventsData[0].description}</Text>
+                        <Text className="home_image_desc">{trainingData.filter(training => training.training_type !== 'nutrition')[0].description.split('.')[0] 
+                        + '. ' 
+                        + trainingData[0].description.split('.')[1] 
+                        + '.'}
+                        </Text>
                       </Flex>
                     </Flex>
                   </Flex>
-                  <Image display={{ base: 'none', lg: 'block'}} w='100%' h='100%' src={eventsData[0].event_image} alt=''></Image>
+                  <Image borderRightRadius='5px' display={{ base: 'none', lg: 'block'}} w='100%' h='100%' src={trainingData.filter(training => training.training_type !== 'nutrition')[0].training_image} alt=''></Image>
                 </animated.div>
               </Link>
             </div>
           </Flex>
         </>}
-        {Object.keys(eventsData).length &&
+        {Object.keys(trainingData).length &&
         <>
-          <Link to='/events'><Text mt='10' textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='home_title'>YOUR HEALTH MATTERS</Text></Link><Flex m='10' w='100%'>
+          <Link to='/events'><Text mt={{ base: '7', sm: '8', md: '9', lg: '10'}} textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '70px'}} id='home_title'>NUTRITION TIPS</Text></Link><Flex h={{ base: '100%'}} m={{ base: '5', sm: '7', md: '8', lg: '10'}} w='100%'>
           <div className="ccard-main" ref={ref_nutrition}>
           <Link to='/events'>
             <animated.div
@@ -159,28 +189,47 @@ function Home() {
             <Box display='flex' justifyContent='center' alignItems='center' w='50%' h='100%'>
               <Box opacity="0.8" backgroundColor='black' w='100%' h='100%'></Box>
               </Box> */}
-              <Flex display={{ base: 'inline-block', lg: 'none' }} position='relative' backgroundColor='#FFBF00' borderTopRadius='10px' direction='column' w='100%'>
-              <Image w='100%' borderTopLeftRadius='10px' src={eventsData[0].event_image}></Image>
-              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} textAlign='center' className="home_image_title" >{eventsData[0].name}</Text>
+              <Flex display={{ base: 'inline-block', lg: 'none' }} position='relative' bgGradient='linear(to-br, #FFBF00, #ffde7a)' borderRadius='5px' direction='column' w='100%'>
+              <Image w='100%' borderTopRadius='5px' src={trainingData.filter(training => training.training_type === 'nutrition')[0].training_image}></Image>
               <Flex justifyContent='center'>
-                {/* <Text w='80%' fontSize='15px' mb='10'>{eventsData[0].description}</Text> */}
+              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} textAlign='center' mt='5' width='90%' className="home_image_title" >{trainingData.filter(training => training.training_type === 'nutrition')[0].title}</Text>
+                </Flex>
+              <Flex justifyContent='center'>
+                <Text w='80%' fontSize='15px' mb='10'>
+                  {trainingData.filter(training => training.training_type === 'nutrition')[0].description.split('.')[0] 
+                  + '. ' 
+                  + trainingData.filter(training => training.training_type === 'nutrition')[0].description.split('.')[1] 
+                  + '.'}
+                  </Text>
               </Flex>
             </Flex>
-                  <Flex display={{ base: 'none', lg: 'block'}} justifyContent='center' alignItems='center' h='100%' backgroundColor='#FFBF00' position='absolute' w='50%'>
+                  <Flex display={{ base: 'none', lg: 'block'}} justifyContent='center' alignItems='center' h='100%' borderLeftRadius='5px' bgGradient='linear(to-br, #FFBF00, #ffde7a)' position='absolute' w='50%'>
                     <Flex direction='column'>
-                      <Text mb='5' mt='5' textAlign='center' lineHeight='100%' className="home_image_title">{eventsData[0].name}</Text>
+                    <Flex justifyContent='center'>
+              <Text fontSize={{ base: '18px', sm: '30px', md: '35px', lg: '40px'}} mt='5' textAlign='center' width='90%' className="home_image_title" >{trainingData.filter(training => training.training_type === 'nutrition')[0].title}</Text>
+                </Flex>
                       <Flex justifyContent='center'>
-                        <Text className="home_image_desc">{eventsData[0].description}</Text>
+                        <Text className="home_image_desc">{trainingData.filter(training => training.training_type === 'nutrition')[0].description.split('.')[0] 
+                        + '. ' 
+                        + trainingData[0].description.split('.')[1] 
+                        + '.'}
+                        </Text>
                       </Flex>
                     </Flex>
                   </Flex>
-                  <Image display={{ base: 'none', lg: 'block'}} w='100%' h='100%' src={eventsData[0].event_image} alt=''></Image>
+                  <Image borderRightRadius='5px' display={{ base: 'none', lg: 'block'}} w='100%' h='100%' src={trainingData.filter(training => training.training_type === 'nutrition')[0].training_image} alt=''></Image>
                 </animated.div>
               </Link>
             </div>
           </Flex>
         </>}
     </Flex>
+    :
+    <Flex justifyContent='center' alignItems='center'><Spinner color='white' /></Flex>
+}
+    </>
+    
+    
   )
 }
 

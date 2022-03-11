@@ -1,0 +1,21 @@
+[
+    {
+        "model": "jwt_auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$320000$fqIsytvXwKvI69LoSOW6RP$HMrNbhC1L9T/93hI9ZIWFGJSXV2GQx3kgQaWk8ICOyY=",
+            "last_login": "2022-03-08T17:59:54Z",
+            "is_superuser": true,
+            "username": "ggohler",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2022-03-08T17:59:32Z",
+            "email": "thisisgurpal@gmail.com",
+            "first_name": "Gurpal",
+            "last_name": "Gohler",
+            "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646840266/project_4_sei61/DSC00627-2_2_v9kruu.jpg",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

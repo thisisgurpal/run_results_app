@@ -110,14 +110,14 @@ function SingleEvent() {
       {Object.keys(filterRuns).length ?
         <Flex minHeight='100vh' direction='column' justifyContent='center' alignItems='center'>
           <Flex mt='10' direction={{ base: 'column', lg: 'row' }} justifyContent='center' alignItems={{ base: 'center', lg: 'stretch' }}>
-            <Flex backgroundColor='#FFBF00' borderLeftRadius={{ base: '0px', lg: '10px' }} borderTopRadius={{ base: '10px', lg: '0px' }} direction='column' w={{ base: '80%', lg: '40%' }}>
-              <Image w='100%' borderTopLeftRadius='10px' src={eventData.event_image}></Image>
+            <Flex bgGradient='linear(to-br, #FFBF00, #ffde7a)' borderTopLeftRadius={{ base: '0px', lg: '5px' }} borderTopRadius={{ base: '5px'}} direction='column' w={{ base: '80%', lg: '40%' }}>
+              <Image w='100%' borderTopLeftRadius={{ base: '5px' }} borderTopRightRadius={{ base: '5px', lg: '0px' }} src={eventData.event_image}></Image>
               <Text fontSize={{ base: '40px', lg: '50px' }} id='single_event_title' >{eventData.name}</Text>
               <Flex justifyContent='center'>
-                <Text w='80%' fontSize={{ base: '15px', lg: '18px', xl: '20px' }} mb='10'>{eventData.description}</Text>
+                <Text w='80%' fontSize={{ base: '15px', lg: '16px', xl: '16px' }} mb='10'>{eventData.description}</Text>
               </Flex>
             </Flex>
-            <Box backgroundColor='white' borderRightRadius={{ base: '0px', lg: '10px' }} borderBottomRadius={{ base: '10px', lg: '0px' }} padding='20px' w={{ base: '80%', lg: '40%' }} h='100%'>
+            <Box backgroundColor='white' borderRightRadius={{ base: '0px', lg: '5px' }} borderBottomRadius={{ base: '5px', lg: '0px' }} padding='20px' w={{ base: '80%', lg: '40%' }} h='100%'>
               <DataTabs data={filterRuns.sort(function (a, b) {
                 return parseFloat(a.position) - parseFloat(b.position)
               })} />

@@ -2,7 +2,7 @@ import {Buffer} from 'buffer';
 
 // This function is simply to extract the token from the localStorage and return it
 export const getTokenFromLocalStorage = () => {
-  return window.localStorage.getItem('tinyhabits-token')
+  return window.localStorage.getItem('token')
 }
 
 // This function is going to use the extracted token, and decode it to find the payload

@@ -19,25 +19,31 @@ const Navbar = ({ toggle }) => {
     const handleLogout = (e) => {
         e.preventDefault()
         // Remove token
-        window.localStorage.removeItem('tinyhabits-token')
+        window.localStorage.removeItem('token')
         // Redirect to the home page
         navigate('/')
       }
 
 
-      useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get(`/api/auth/profile/`,
-      {
-        headers: {
-          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+      const gotToUserProfile = (e) => {
+        e.preventDefault()
+        const getProfileId = async () => {
+          try {
+            const { data } = await axios.get('/api/auth/profile/', {
+                headers: {
+                  Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+                }
+              })
+            console.log('data', data.id)
+            navigate(`/profile/${data.id}`)
+            //  setUserProfileId(data.id)
+          } catch (err) {
+            console.log(err)
+          }
         }
-      })
-      console.log(data.id)
-      setUserId(data.id)
-    }
-    getData()
-  }, [])
+        getProfileId()
+    
+      }
 
     return (
         <Nav>
@@ -55,18 +61,12 @@ const Navbar = ({ toggle }) => {
                 <NavLink to="/events-for-you" activestyle="true">
                     Marathons For You
                 </NavLink>
-                {userIsAuthenticated() ? 
-                <NavLink to={`/profile/${userId}`} activestyle="true">
-                    Profile
-                </NavLink>
-            :
-            ''
-            }
             </NavMenu>
             {userIsAuthenticated() ? 
+            <><NavBtn onClick={gotToUserProfile}>Profile </NavBtn>
             <NavBtn>
-                <NavBtnLink to='/' onClick={handleLogout}>Logout</NavBtnLink>
-            </NavBtn>
+                    <NavBtnLink to='/' onClick={handleLogout}>Logout</NavBtnLink>
+                </NavBtn></>
             :
             <NavBtn>
                 <NavBtnLink to='/login'>Login</NavBtnLink>
