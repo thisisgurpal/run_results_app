@@ -81,5 +81,22 @@ export const NavBtnLink = styled(Link)`
     }
 `
 
+export const NavBtn2 = styled.nav`
+color: black;
+display: flex;
+align-items: center;
+text-decoration: none;
+padding: 0 1rem;
+height: 100%;
+cursor: pointer;
+
+&.active {
+    font-weight: bold;
+}
+&:hover {
+    transform: scale(1.1);
+}
+`
+
 
 

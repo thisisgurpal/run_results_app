@@ -176,7 +176,7 @@ function RunnerProfile() {
                             <Flex h='100%' p='10px' direction='column' justifyContent='center' alignItems='center'>
                               <Box display='flex'>
                                 <Text w='100%' fontSize='30px' color='black' textAlign='center'>
-                                  {run.days}:{run.hours}:{run.minutes}:{run.seconds}
+                                  {new Date(((run.hours * 60 * 60) + (run.minutes * 60) + run.seconds) * 1000).toISOString().substr(11, 8)}
                                 </Text>
                               </Box>
                               <Box display='flex'>

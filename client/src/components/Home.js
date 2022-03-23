@@ -77,6 +77,11 @@ function Home() {
       <Flex minHeight='100vh' w='100%' direction='column' alignItems='center' justifyContent='center'>
       {Object.keys(eventsData).length &&
         <>
+        <Flex>
+        <Text fontWeight='bold' mt={{ base: '7', sm: '8', md: '9', lg: '10'}} textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '50px', lg: '70px'}} id='home_title_welcome'>Welcome to Runners</Text>
+        <Text mt={{ base: '7', sm: '8', md: '9', lg: '10'}} textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '50px', lg: '70px'}} color='#FFBF00'>Universe</Text>
+        </Flex>
+        
           <Link to='/events'><Text mt={{ base: '7', sm: '8', md: '9', lg: '10'}} textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '70px'}} id='home_title'>RUNNING EVENTS</Text></Link><Flex h={{ base: '100%'}} m={{ base: '5', sm: '7', md: '8', lg: '10'}} w='100%'>
             <div className="ccard-main" ref={ref_events}>
               <Link to={`/events/${eventsData[0].id}`}>

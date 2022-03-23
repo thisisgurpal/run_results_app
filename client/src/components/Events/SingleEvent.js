@@ -39,7 +39,7 @@ function SingleEvent() {
             year: `${run.year}`,
             position: `${run.position}`,
             name: `${run.runner.first_name} ${run.runner.last_name}`,
-            time: `${run.hours}:${run.minutes}`,
+            time: `${new Date(((run.hours * 60 * 60) + (run.minutes * 60) + run.seconds) * 1000).toISOString().substr(11, 8)}`,
             runnerID: `${run.runner.id}`,
             gender: `${run.runner.gender}`
           }

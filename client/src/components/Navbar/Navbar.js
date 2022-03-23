@@ -6,7 +6,8 @@ import {
     Bars, 
     NavMenu, 
     NavBtn,
-    NavBtnLink
+    NavBtnLink,
+    NavBtn2
 } from './NavbarElements'
 import { useNavigate } from "react-router-dom"
 import axios from 'axios'
@@ -56,14 +57,14 @@ const Navbar = ({ toggle }) => {
                     Events
                 </NavLink>
                 <NavLink to="/training" activestyle="true">
-                    Training & Nutrition
+                    Training & Health
                 </NavLink>
                 <NavLink to="/events-for-you" activestyle="true">
                     Marathons For You
                 </NavLink>
             </NavMenu>
             {userIsAuthenticated() ? 
-            <><NavBtn onClick={gotToUserProfile}>Profile </NavBtn>
+            <><NavBtn2 onClick={gotToUserProfile} activestyle="true">Profile</NavBtn2>
             <NavBtn>
                     <NavBtnLink to='/' onClick={handleLogout}>Logout</NavBtnLink>
                 </NavBtn></>

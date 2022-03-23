@@ -51,7 +51,7 @@ const Login = () => {
   }
 
   return (
-    <><Flex minHeight='100vh' width="full" align="center" justifyContent="center">
+    <><Flex minHeight='100vh' width="full" mt='100px' alignItems="flex-start" justifyContent="center">
       <Box background='white' p={8} maxWidth="500px" borderWidth={1} borderRadius={8} boxShadow="2xl">
         <>
           <Box textAlign="center">

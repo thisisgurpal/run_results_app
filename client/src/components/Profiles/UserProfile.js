@@ -8,6 +8,7 @@ import { getTokenFromLocalStorage, userIsAuthenticated } from '../helper/auth'
 function UserProfile() {
 
   const [profileData, setProfileData] = useState({})
+  const [loggedInUser, setLoggedInUser] = useState({})
   const [commentDeleted, setCommentDeleted] = useState(false)
 
   const { userId } = useParams()
@@ -20,6 +21,18 @@ function UserProfile() {
     }
     getData()
   }, [commentDeleted, userId])
+
+  useEffect(() => {
+    const getLoggedInUser = async () => {
+      const { data } = await axios.get(`/api/auth/profile/`, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
+        }
+      })
+      setLoggedInUser(data)
+    }
+    getLoggedInUser()
+  }, [])
 
   const generateDate = (comment) => {
     if (new Date(comment.created_at).toLocaleDateString() === new Date().toLocaleDateString()) return 'Today'
@@ -41,7 +54,7 @@ function UserProfile() {
     }
   }
 
-
+console.log(Object.keys(profileData).length && profileData)
   function DataTabs({ data }) {
     return (
       <Tabs variant='enclosed' w='100%'>
@@ -51,12 +64,16 @@ function UserProfile() {
           <Tab>Comments</Tab>
         </TabList>
         <TabPanels>
-          <TabPanel display='flex' alignItems='center' p={4}><Flex direction='column' alignItems='flex-start'>
-            {data.fav_training.map(training =>
-              <Flex alignItems='center' key={training.id}><Link to='/training'>
-                <Text ml='10' fontSize='50px' id='position_name'>{training.training.description}</Text>
+          <TabPanel display='flex' alignItems='center' p={4}><Flex w='100%' direction='column' alignItems='flex-start'>
+          {data.fav_training.map(training =>
+              <Flex mt='10px' w='100%' alignItems='center' key={training.training.id}><Link class='fav_runner_link' to={`/training`}>
+                <hr border-color='#6c6c6c' color='grey' w='100%' h='1px' />
+                <Flex w='100%' alignItems='center'>
+                  <Text mt='2' mb='2' textAlign='center' width='100%' id='events_small' fontSize='50px'>{training.training.title}</Text>
+                </Flex>
               </Link></Flex>
             )}
+            <hr color='grey' width='100%' h='1px' />
           </Flex></TabPanel>
           <TabPanel display='flex' alignItems='center' p={4}><Flex w='100%' direction='column' alignItems='flex-start'>
             {data.user_runners.map(runner =>
@@ -95,7 +112,7 @@ function UserProfile() {
                           </Flex>
 
                         </Flex>
-                        {profileData.id === comment.user && 
+                        {userIsAuthenticated() && loggedInUser.id === comment.user && 
                         <Button id={comment.id} onClick={deleteComment}>Delete</Button>
                         }
                         </Flex>

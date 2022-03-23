@@ -62,6 +62,19 @@ body {
   }
 }
 
+#home_title_welcome {
+  font-family: 'Ubuntu', sans-serif;
+  color: #fff;
+  background: linear-gradient(to right, rgb(197, 197, 197), rgb(197, 197, 197) 50%, rgb(255, 255, 255) 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers
+}
+
 .home_image_title{
   font-family: 'Plaster', cursive;
   font-size: 50px;
@@ -96,3 +109,7 @@ body {
 
       }
       }
+
+    #home_welcome_universe{
+      color: #FFBF00;
+    }

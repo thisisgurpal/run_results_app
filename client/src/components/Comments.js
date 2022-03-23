@@ -60,10 +60,9 @@ const Comments = () => {
     e.preventDefault()
     const post_commentFormData = { ...commentFormData, event: parseInt(eventId) }
     try {
-      const token = localStorage.getItem('tinyhabits-token')
       await axios.post(`/api/comments/`, post_commentFormData, {
-        'headers': {
-          'Authorization': 'Bearer ' + token
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         }
       })
       setFormSubmitted(true)
@@ -95,11 +94,9 @@ const Comments = () => {
   const deleteComment = async (e) => {
     e.preventDefault()
     try {
-      const token = localStorage.getItem('tinyhabits-token')
-      console.log(token)
       await axios.delete(`/api/comments/${e.target.id}`, {
-        'headers': {
-          'Authorization': 'Bearer ' + token
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         }
       }) //Posting the data from the form
       setCommentDeleted(true)
@@ -113,7 +110,7 @@ const Comments = () => {
     if (new Date(comment.created_at).getDate() === new Date().getDate() - 1) return 'Yesterday'
     else return new Date(comment.created_at).toLocaleDateString()
   }
-  console.log(comments)
+  console.log('comments', comments)
   return (
     <>
       {userIsAuthenticated() &&
@@ -156,7 +153,9 @@ const Comments = () => {
 
           <Text color='#fff' mb='4'>Comments</Text>
           {comments.length ?
-            comments.map(comment => {
+            comments.sort(function (a, b) {
+              return new Date(b.created_at) - new Date(a.created_at)
+          }).map(comment => {
               return (
                 <Flex direction='column'>
                   <hr color='white' width='100%' height='1px' />
@@ -167,15 +166,21 @@ const Comments = () => {
                       <Flex w='100%' direction='column'>
                         <Flex justifyContent='space-between'>
                         <Flex alignItems='center'>
+                          <Link to={`/profile/${comment.user.id}`}>
                           <Avatar src={comment.user.profile_image} size='md' />
+                          </Link>
                           <Flex alignItems='center'>
+                          <Link to={`/profile/${comment.user.id}`}>
                             <Text ml='3' fontSize='20px' color='white' mr='2'>
                               {`${comment.user.first_name + ' ' + comment.user.last_name} `}
                             </Text>
+                            </Link>
                           </Flex>
+                          
+                          
 
                         </Flex>
-                        {profileData.id === comment.user.id && 
+                        {userIsAuthenticated() && profileData.id === comment.user.id && 
                         <Button id={comment.id} onClick={deleteComment}>Delete</Button>
                         }
                         </Flex>
