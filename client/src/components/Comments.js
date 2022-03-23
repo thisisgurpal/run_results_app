@@ -94,7 +94,7 @@ const Comments = () => {
   const deleteComment = async (e) => {
     e.preventDefault()
     try {
-      await axios.delete(`/api/comments/${e.target.id}`, {
+      await axios.delete(`/api/comments/${e.target.id}/`, {
         headers: {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         }

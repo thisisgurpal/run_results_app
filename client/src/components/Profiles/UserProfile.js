@@ -14,7 +14,7 @@ function UserProfile() {
   const { userId } = useParams()
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/auth/profile/${userId}`)
+      const { data } = await axios.get(`/api/auth/profile/${userId}/`)
       console.log(data)
       setProfileData(data)
       setCommentDeleted(false)
@@ -43,7 +43,7 @@ function UserProfile() {
   const deleteComment = async (e) => {
     e.preventDefault()
     try {
-      await axios.delete(`/api/comments/${e.target.id}`, {
+      await axios.delete(`/api/comments/${e.target.id}/`, {
         headers: {
           Authorization: `Bearer ${getTokenFromLocalStorage()}`,
         }

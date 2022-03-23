@@ -16,7 +16,7 @@ function RunnerProfile() {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/runners/${runnerID}`) // * <-- replace with your endpoint
+      const { data } = await axios.get(`/api/runners/${runnerID}/`) // * <-- replace with your endpoint
       console.log(data)
       setRunnerData(data)
     }
