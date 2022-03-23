@@ -1,0 +1,35 @@
+[
+{
+  "model": "comments.comment",
+  "pk": 14,
+  "fields": {
+    "description": "Loved this event! I was there rooting everyone on the whole day haha",
+    "comment_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998720/project_4_sei61/IMG_2364-e1555437253134-scaled_xk2b5y.jpg",
+    "created_at": "2022-03-11T11:38:42.481Z",
+    "user": 7,
+    "event": 3
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 15,
+  "fields": {
+    "description": "Amazing time, I want to try and run this marathon soon!",
+    "comment_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998813/project_4_sei61/2013_Boston_Marathon_-_Flickr_-_soniasu__26_akwuap.jpg",
+    "created_at": "2022-03-11T11:40:18.736Z",
+    "user": 11,
+    "event": 3
+  }
+},
+{
+  "model": "comments.comment",
+  "pk": 16,
+  "fields": {
+    "description": "Caught the start of the race. Had a really good time.",
+    "comment_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998880/project_4_sei61/ap_17107510744666_bfxnvv.webp",
+    "created_at": "2022-03-11T11:42:33.947Z",
+    "user": 12,
+    "event": 3
+  }
+}
+]

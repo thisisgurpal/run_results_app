@@ -1,26 +1,26 @@
 [
-    {
-        "model": "event_links.event_link",
-        "pk": 1,
-        "fields": {
-            "link1": "https://www.baa.org/races/boston-marathon",
-            "link2": "https://www.baa.org/races/boston-marathon/qualify",
-            "link3": "na",
-            "link4": "na",
-            "link5": "na",
-            "event": 3
-        }
-    },
-    {
-        "model": "event_links.event_link",
-        "pk": 2,
-        "fields": {
-            "link1": "https://www.tcslondonmarathon.com/",
-            "link2": "https://www.tcslondonmarathon.com/enter/how-to-enter/good-for-age-entry",
-            "link3": "na",
-            "link4": "na",
-            "link5": "na",
-            "event": 4
-        }
-    }
+{
+  "model": "event_links.event_link",
+  "pk": 1,
+  "fields": {
+    "link1": "https://www.baa.org/races/boston-marathon",
+    "link2": "https://www.baa.org/races/boston-marathon/qualify",
+    "link3": "na",
+    "link4": "na",
+    "link5": "na",
+    "event": 3
+  }
+},
+{
+  "model": "event_links.event_link",
+  "pk": 2,
+  "fields": {
+    "link1": "https://www.tcslondonmarathon.com/",
+    "link2": "https://www.tcslondonmarathon.com/enter/how-to-enter/good-for-age-entry",
+    "link3": "na",
+    "link4": "na",
+    "link5": "na",
+    "event": 4
+  }
+}
 ]

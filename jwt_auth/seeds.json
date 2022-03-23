@@ -1,21 +1,135 @@
 [
-    {
-        "model": "jwt_auth.user",
-        "pk": 1,
-        "fields": {
-            "password": "pbkdf2_sha256$320000$fqIsytvXwKvI69LoSOW6RP$HMrNbhC1L9T/93hI9ZIWFGJSXV2GQx3kgQaWk8ICOyY=",
-            "last_login": "2022-03-08T17:59:54Z",
-            "is_superuser": true,
-            "username": "ggohler",
-            "is_staff": true,
-            "is_active": true,
-            "date_joined": "2022-03-08T17:59:32Z",
-            "email": "thisisgurpal@gmail.com",
-            "first_name": "Gurpal",
-            "last_name": "Gohler",
-            "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646840266/project_4_sei61/DSC00627-2_2_v9kruu.jpg",
-            "groups": [],
-            "user_permissions": []
-        }
-    }
+{
+  "model": "jwt_auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$320000$fqIsytvXwKvI69LoSOW6RP$HMrNbhC1L9T/93hI9ZIWFGJSXV2GQx3kgQaWk8ICOyY=",
+    "last_login": "2022-03-08T17:59:54Z",
+    "is_superuser": true,
+    "username": "ggohler",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-03-08T17:59:32Z",
+    "email": "thisisgurpal@gmail.com",
+    "first_name": "Gurpal",
+    "last_name": "Gohler",
+    "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646840266/project_4_sei61/DSC00627-2_2_v9kruu.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 7,
+  "fields": {
+    "password": "runningapp",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ArthurHarris",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-03-11T11:31:08Z",
+    "email": "arthur.harris@example.com",
+    "first_name": "Arthur",
+    "last_name": "Harris",
+    "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998305/project_4_sei61/37_icb40i.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 8,
+  "fields": {
+    "password": "runningapp",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "LucyDavidson",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-03-11T11:32:56Z",
+    "email": "lucy.davidson@example.com",
+    "first_name": "Lucy",
+    "last_name": "Davidson",
+    "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998379/project_4_sei61/94_jvdaxl.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 9,
+  "fields": {
+    "password": "runningapp",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ShawnVargas",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-03-11T11:33:38Z",
+    "email": "shawn.vargas@example.com",
+    "first_name": "Shawn",
+    "last_name": "Vargas",
+    "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998433/project_4_sei61/28_auxalq.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 10,
+  "fields": {
+    "password": "runningapp",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "BobbieBaker",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-03-11T11:34:58Z",
+    "email": "bobbie.baker@example.com",
+    "first_name": "Bobbie",
+    "last_name": "Baker",
+    "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998501/project_4_sei61/47_hmlvii.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 11,
+  "fields": {
+    "password": "runningapp",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "ErikaBishop",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-03-11T11:35:43Z",
+    "email": "erika.bishop@example.com",
+    "first_name": "Erika",
+    "last_name": "Bishop",
+    "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998546/project_4_sei61/52_o2prvs.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "jwt_auth.user",
+  "pk": 12,
+  "fields": {
+    "password": "runningapp",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "PeterGordon",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-03-11T11:36:25Z",
+    "email": "peter.gordon@example.com",
+    "first_name": "Peter",
+    "last_name": "Gordon",
+    "profile_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646998588/project_4_sei61/53_cxtfka.jpg",
+    "groups": [],
+    "user_permissions": []
+  }
+}
 ]

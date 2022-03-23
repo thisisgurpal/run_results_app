@@ -1,518 +1,518 @@
 [
-    {
-        "model": "requirements.requirement",
-        "pk": 4,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 0,
-            "seconds": 0,
-            "age_group": "18-34",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 5,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 30,
-            "seconds": 0,
-            "age_group": "18-34",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 6,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 5,
-            "seconds": 0,
-            "age_group": "35-39",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 7,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 35,
-            "seconds": 0,
-            "age_group": "35-39",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 8,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 10,
-            "seconds": 0,
-            "age_group": "40-44",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 9,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 40,
-            "seconds": 0,
-            "age_group": "40-44",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 10,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 20,
-            "seconds": 0,
-            "age_group": "45-49",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 11,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 50,
-            "seconds": 0,
-            "age_group": "45-49",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 12,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 25,
-            "seconds": 0,
-            "age_group": "50-54",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 13,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 55,
-            "seconds": 0,
-            "age_group": "50-54",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 14,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 35,
-            "seconds": 0,
-            "age_group": "55-59",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 15,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 5,
-            "seconds": 0,
-            "age_group": "55-59",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 16,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 50,
-            "seconds": 0,
-            "age_group": "60-64",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 17,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 20,
-            "seconds": 0,
-            "age_group": "60-64",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 18,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 5,
-            "seconds": 0,
-            "age_group": "65-69",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 19,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 35,
-            "seconds": 0,
-            "age_group": "65-69",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 20,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 20,
-            "seconds": 0,
-            "age_group": "70-74",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 21,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 50,
-            "seconds": 0,
-            "age_group": "70-74",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 22,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 35,
-            "seconds": 0,
-            "age_group": "75-79",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 23,
-        "fields": {
-            "days": 0,
-            "hours": 5,
-            "minutes": 5,
-            "seconds": 0,
-            "age_group": "75-79",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 24,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 50,
-            "seconds": 0,
-            "age_group": "80 +",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 25,
-        "fields": {
-            "days": 0,
-            "hours": 5,
-            "minutes": 20,
-            "seconds": 0,
-            "age_group": "80 +",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 26,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 0,
-            "seconds": 0,
-            "age_group": "18-39",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 27,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 5,
-            "seconds": 0,
-            "age_group": "40-44",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 28,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 10,
-            "seconds": 0,
-            "age_group": "45-49",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 29,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 15,
-            "seconds": 0,
-            "age_group": "50-54",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 30,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 20,
-            "seconds": 0,
-            "age_group": "55-59",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 31,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 45,
-            "seconds": 0,
-            "age_group": "60-54",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 32,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 0,
-            "seconds": 0,
-            "age_group": "65-69",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 33,
-        "fields": {
-            "days": 0,
-            "hours": 5,
-            "minutes": 0,
-            "seconds": 0,
-            "age_group": "70-74",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 34,
-        "fields": {
-            "days": 0,
-            "hours": 5,
-            "minutes": 15,
-            "seconds": 0,
-            "age_group": "75-79",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 35,
-        "fields": {
-            "days": 0,
-            "hours": 5,
-            "minutes": 30,
-            "seconds": 0,
-            "age_group": "80 +",
-            "gender": "male"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 36,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 45,
-            "seconds": 0,
-            "age_group": "18-39",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 37,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 50,
-            "seconds": 0,
-            "age_group": "40-44",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 38,
-        "fields": {
-            "days": 0,
-            "hours": 3,
-            "minutes": 53,
-            "seconds": 0,
-            "age_group": "45-49",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 39,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 0,
-            "seconds": 0,
-            "age_group": "50-54",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 40,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 5,
-            "seconds": 0,
-            "age_group": "55-59",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 41,
-        "fields": {
-            "days": 0,
-            "hours": 4,
-            "minutes": 30,
-            "seconds": 0,
-            "age_group": "60-64",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 42,
-        "fields": {
-            "days": 0,
-            "hours": 5,
-            "minutes": 0,
-            "seconds": 0,
-            "age_group": "65-69",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 43,
-        "fields": {
-            "days": 0,
-            "hours": 6,
-            "minutes": 0,
-            "seconds": 0,
-            "age_group": "70-74",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 44,
-        "fields": {
-            "days": 0,
-            "hours": 6,
-            "minutes": 20,
-            "seconds": 0,
-            "age_group": "75-79",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 45,
-        "fields": {
-            "days": 0,
-            "hours": 6,
-            "minutes": 40,
-            "seconds": 0,
-            "age_group": "80 +",
-            "gender": "female"
-        }
-    },
-    {
-        "model": "requirements.requirement",
-        "pk": 46,
-        "fields": {
-            "days": 0,
-            "hours": 0,
-            "minutes": 0,
-            "seconds": 0,
-            "age_group": "na",
-            "gender": "male"
-        }
-    }
+{
+  "model": "requirements.requirement",
+  "pk": 4,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 0,
+    "seconds": 0,
+    "age_group": "18-34",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 5,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 30,
+    "seconds": 0,
+    "age_group": "18-34",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 6,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 5,
+    "seconds": 0,
+    "age_group": "35-39",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 7,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 35,
+    "seconds": 0,
+    "age_group": "35-39",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 8,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 10,
+    "seconds": 0,
+    "age_group": "40-44",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 9,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 40,
+    "seconds": 0,
+    "age_group": "40-44",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 10,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 20,
+    "seconds": 0,
+    "age_group": "45-49",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 11,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 50,
+    "seconds": 0,
+    "age_group": "45-49",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 12,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 25,
+    "seconds": 0,
+    "age_group": "50-54",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 13,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 55,
+    "seconds": 0,
+    "age_group": "50-54",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 14,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 35,
+    "seconds": 0,
+    "age_group": "55-59",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 15,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 5,
+    "seconds": 0,
+    "age_group": "55-59",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 16,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 50,
+    "seconds": 0,
+    "age_group": "60-64",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 17,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 20,
+    "seconds": 0,
+    "age_group": "60-64",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 18,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 5,
+    "seconds": 0,
+    "age_group": "65-69",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 19,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 35,
+    "seconds": 0,
+    "age_group": "65-69",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 20,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 20,
+    "seconds": 0,
+    "age_group": "70-74",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 21,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 50,
+    "seconds": 0,
+    "age_group": "70-74",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 22,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 35,
+    "seconds": 0,
+    "age_group": "75-79",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 23,
+  "fields": {
+    "days": 0,
+    "hours": 5,
+    "minutes": 5,
+    "seconds": 0,
+    "age_group": "75-79",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 24,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 50,
+    "seconds": 0,
+    "age_group": "80 +",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 25,
+  "fields": {
+    "days": 0,
+    "hours": 5,
+    "minutes": 20,
+    "seconds": 0,
+    "age_group": "80 +",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 26,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 0,
+    "seconds": 0,
+    "age_group": "18-39",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 27,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 5,
+    "seconds": 0,
+    "age_group": "40-44",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 28,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 10,
+    "seconds": 0,
+    "age_group": "45-49",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 29,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 15,
+    "seconds": 0,
+    "age_group": "50-54",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 30,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 20,
+    "seconds": 0,
+    "age_group": "55-59",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 31,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 45,
+    "seconds": 0,
+    "age_group": "60-54",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 32,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 0,
+    "seconds": 0,
+    "age_group": "65-69",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 33,
+  "fields": {
+    "days": 0,
+    "hours": 5,
+    "minutes": 0,
+    "seconds": 0,
+    "age_group": "70-74",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 34,
+  "fields": {
+    "days": 0,
+    "hours": 5,
+    "minutes": 15,
+    "seconds": 0,
+    "age_group": "75-79",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 35,
+  "fields": {
+    "days": 0,
+    "hours": 5,
+    "minutes": 30,
+    "seconds": 0,
+    "age_group": "80 +",
+    "gender": "male"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 36,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 45,
+    "seconds": 0,
+    "age_group": "18-39",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 37,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 50,
+    "seconds": 0,
+    "age_group": "40-44",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 38,
+  "fields": {
+    "days": 0,
+    "hours": 3,
+    "minutes": 53,
+    "seconds": 0,
+    "age_group": "45-49",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 39,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 0,
+    "seconds": 0,
+    "age_group": "50-54",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 40,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 5,
+    "seconds": 0,
+    "age_group": "55-59",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 41,
+  "fields": {
+    "days": 0,
+    "hours": 4,
+    "minutes": 30,
+    "seconds": 0,
+    "age_group": "60-64",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 42,
+  "fields": {
+    "days": 0,
+    "hours": 5,
+    "minutes": 0,
+    "seconds": 0,
+    "age_group": "65-69",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 43,
+  "fields": {
+    "days": 0,
+    "hours": 6,
+    "minutes": 0,
+    "seconds": 0,
+    "age_group": "70-74",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 44,
+  "fields": {
+    "days": 0,
+    "hours": 6,
+    "minutes": 20,
+    "seconds": 0,
+    "age_group": "75-79",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 45,
+  "fields": {
+    "days": 0,
+    "hours": 6,
+    "minutes": 40,
+    "seconds": 0,
+    "age_group": "80 +",
+    "gender": "female"
+  }
+},
+{
+  "model": "requirements.requirement",
+  "pk": 46,
+  "fields": {
+    "days": 0,
+    "hours": 0,
+    "minutes": 0,
+    "seconds": 0,
+    "age_group": "na",
+    "gender": "male"
+  }
+}
 ]

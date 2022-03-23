@@ -1,0 +1,68 @@
+[
+{
+  "model": "training.training",
+  "pk": 3,
+  "fields": {
+    "title": "Learn to run for longer!",
+    "description": "Preparation for a long-distance run begins in your head. It’s ok to be anxious when you try distance you’ve never run before. You can make it easier by preparing mentally for the long distance you’re going to cover.\r\n\r\nPreparation for a long-distance run begins in your head. It’s ok to be anxious when you try distance you’ve never run before. You can make it easier by preparing mentally for the long distance you’re going to cover.\r\n\r\nVisualize the route you will run and picture yourself running well and finishing strong. Trust your training: take it slow and tell yourself you can do it. A positive mindset will go a long way when the going gets tough. If you tell yourself it’s hard and you can’t do it, then you’ll only make it harder for yourself and you’ll actually find it harder.\r\n\r\nYou need to carbo-load for your long run, as carbs provide your body with energy — so make sure to get enough carbs before your long run!\r\n\r\nOatmeal is a great choice of carbs, as it’s easy on the stomach and you can increase portion sizes as your workout demands.\r\n\r\nYour long run pace should be a slow pace you can hold for the duration of the run. You should run at a pace that would allow you to hold a conversation.\r\n\r\nLong runs are more about the effort and simply covering the distance. If you have a specific race and goal in mind for a half marathon or marathon, then this is when you can begin to think about hitting certain paces.\r\n\r\nAim for 1 minute to 90 seconds slower than your planned race pace. It’s easy to overdo it in training and run too hard when you’re feeling good. It’s better to arrive at the start slightly undertrained than even as little as 1% overtrained.",
+    "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646976651/project_4_sei61/long-distance-running-tips_woman-running-city_ft-1024x683.jpg_xpcx97.webp",
+    "training_type": "endurance",
+    "owner": 1
+  }
+},
+{
+  "model": "training.training",
+  "pk": 4,
+  "fields": {
+    "title": "Nutrition tips your body will love",
+    "description": "Eating whole foods is one of the best things that you can do for your body—whether or not you’re a runner. Whole foods are packed with nutrients that will help your body recover from all of your training and fuel your future workouts. Not sure what makes up a whole food?  My biggest tip is to stick to the perimeter of your grocery store when shopping. The whole foods are typically around the edges of the store.\r\n\r\nAfter a run or a workout, it is important to eat something within 30-45 minutes. This replenishes your glycogen stores and jumpstarts the recovery process in your muscles. Shoot for a snack that is about 150-200 calories and has a 2:1 ratio of carbs:protein. One of the best recovery snacks is a glass of chocolate milk – who wouldn’t want their exercise drink to be chocolate milk?\r\n\r\nGluten free and low-carb diets are all the rage right now, but carbohydrates are essential for runners! Your body uses your glycogen stores to power your running, so don’t be shy about eating carbs if you are a long-distance runner. Of course, the less processed and refined the majority of the carbs in your diet, the better.\r\n\r\nHealthy fats are an important part of a runner’s diet, and you should aim to get about 20% of your daily caloric intake from healthy fats. Fats help your body absorb nutrients, help increase your feelings of satiety after a snack or meal, and help protect you against injuries. Great sources of healthy fats are avocado, coconut oil, olive oil, fish, eggs, nuts/seeds and nut/seed butter, and full-fat dairy (like whole milk).\r\n\r\nWhen you are hungry and in a rush, you are more likely to grab the fastest/easiest thing to eat rather than the healthiest. If you keep quick and healthy snack options like granola bars, grapes, apples, string cheese, almonds, etc available in your house, you will eventually start to turn to those as options for a quick snack.",
+    "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646980047/project_4_sei61/hunu_0_qkgl4i.jpg",
+    "training_type": "nutrition",
+    "owner": 1
+  }
+},
+{
+  "model": "training.training",
+  "pk": 5,
+  "fields": {
+    "title": "Train for strength, not gains",
+    "description": "As a runner, train for strength and power, not to bulk up with massive muscles. Choose your weights and reps wisely if you want to get stronger but not necessarily bigger. ‘Runners should be lifting heavy,’ says Brad Schoenfeld a strength and conditioning specialist and associate professor of exercise science at Lehman College in New York, US. ‘Volume builds muscle, whereas strength is maximised by heavy loads.’\r\n\r\nA strength-training programme should be periodised like running, explains Fitzgerald. ‘At the beginning, focus on three sets of 10 reps, which is a fairly basic set and rep scheme, building up movement capacity and getting more efficient with using moderate weight,’ he says. ‘Then you can add on weight, periodising appropriately, until you eventually get into power-based moves or Olympic lifts, where the reps come down and sets increase to something like two to five reps for four or five sets.’\r\n\r\nOne important consideration is to not allow weight training to add so much stress to your body that you get injured. ‘Runners tend to be type A– we want to feel the burn – which is why it’s typical for us to sometimes run too fast or too long,’ says Fitzgerald. ‘But that also means that we can go too hard in the weights room.’",
+    "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646995993/project_4_sei61/78219302_haxt4u.webp",
+    "training_type": "strength",
+    "owner": 1
+  }
+},
+{
+  "model": "training.training",
+  "pk": 6,
+  "fields": {
+    "title": "A runners diet",
+    "description": "Eating right can help you have the energy you need during your runs. A balanced diet for healthy runners should include all the essentials: carbohydrates, protein, fats, vitamins, and minerals.\r\n\r\nWithout a doubt, carbs are the best source of energy for athletes. Carbohydrates should make up about 60% to 65% of total calorie intake for most runners. However, some runners (such as sprinters) may need more than 70%, and some endurance runners may need as little as 50%.\r\n\r\nWhole-grain foods are less processed, meaning they retain more of the nutrition the grain naturally provides. Choosing whole-grain pasta over white, for example, provides you with more nutrients, including B vitamins (niacin, thiamine, folate), fiber, zinc, iron, magnesium, and manganese. Whole grains also contain fiber, which can help you feel fuller longer.\r\n\r\nProtein is used for some energy and to repair tissue damaged during training. In addition to being an essential nutrient, protein keeps you feeling full longer, which helps if you're trying to lose weight.\r\n\r\nAccording to USDA guidelines, protein should make up about 10% to 35% of your daily intake. But exercise physiologists often use a formula based on weight to determine a more accurate amount.\r\n\r\nA high-fat diet can quickly pack on the pounds, so try to ensure that no more than 20% to 35% of your total diet comes from fats. Stick to foods low in saturated fats and cholesterol.\r\n\r\nFoods such as nuts, oils, and cold-water fish provide essential fats omega-3s which are vital for good health and help prevent certain diseases. The National Institutes of Health recommends 500 mg to 1,600 mg of omega-3 fatty acids daily (1,100 mg for females ages 18 and up and 1,600 mg for adult males).",
+    "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646996616/project_4_sei61/runners-diet-blog_background_1920x1080_313dc63e-2831-42f1-b138-97750ec9af1a_1100x_ithsna.webp",
+    "training_type": "nutrition",
+    "owner": 1
+  }
+},
+{
+  "model": "training.training",
+  "pk": 7,
+  "fields": {
+    "title": "Yoga and all its benefits",
+    "description": "...",
+    "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646996735/project_4_sei61/parkyoga-56aa41df3df78cf772aee2d1_vy0qki.jpg",
+    "training_type": "nutrition",
+    "owner": 1
+  }
+},
+{
+  "model": "training.training",
+  "pk": 8,
+  "fields": {
+    "title": "What does exercise do for the the brain?",
+    "description": "...",
+    "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646996981/project_4_sei61/11paul-videoSixteenByNineJumbo1600_lmjwix.png",
+    "training_type": "nutrition",
+    "owner": 1
+  }
+}
+]

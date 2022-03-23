@@ -1,0 +1,42 @@
+[
+{
+  "model": "fav_training.fav_training",
+  "pk": 3,
+  "fields": {
+    "user": 7,
+    "training": 3
+  }
+},
+{
+  "model": "fav_training.fav_training",
+  "pk": 4,
+  "fields": {
+    "user": 1,
+    "training": 6
+  }
+},
+{
+  "model": "fav_training.fav_training",
+  "pk": 5,
+  "fields": {
+    "user": 1,
+    "training": 7
+  }
+},
+{
+  "model": "fav_training.fav_training",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "training": 5
+  }
+},
+{
+  "model": "fav_training.fav_training",
+  "pk": 7,
+  "fields": {
+    "user": 7,
+    "training": 6
+  }
+}
+]
