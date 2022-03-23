@@ -21,7 +21,6 @@ function SingleEvent() {
   const [eventData, setEventData] = useState({})
   const [gender, setGender] = useState('')
   const [filterRuns, setFilterRuns] = useState({})
-  const [imageUploading, setImageUploading] = useState(false)
 
 
   function removeDuplicateArrayValues(arr) {
