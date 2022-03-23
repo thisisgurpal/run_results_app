@@ -27,10 +27,10 @@ function SingleEvent() {
   function removeDuplicateArrayValues(arr) {
     return [...new Set(arr)]
   }
-
+console.log(eventId)
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/events/${eventId}`) // * <-- replace with your endpoint
+      const { data } = await axios.get(`/api/events/${eventId}/`)
       console.log(data)
       setEventData(data)
       if (Object.keys(data.runs).length) {
@@ -104,7 +104,7 @@ function SingleEvent() {
       </Tabs>
     )
   }
-
+console.log(Object.keys(runsData).length && runsData)
   return (
     <>
       {Object.keys(filterRuns).length ?
