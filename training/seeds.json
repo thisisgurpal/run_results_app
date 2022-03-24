@@ -28,28 +28,6 @@
     "title": "Train for strength, not gains",
     "description": "As a runner, train for strength and power, not to bulk up with massive muscles. Choose your weights and reps wisely if you want to get stronger but not necessarily bigger. ‘Runners should be lifting heavy,’ says Brad Schoenfeld a strength and conditioning specialist and associate professor of exercise science at Lehman College in New York, US. ‘Volume builds muscle, whereas strength is maximised by heavy loads.’\r\n\r\nA strength-training programme should be periodised like running, explains Fitzgerald. ‘At the beginning, focus on three sets of 10 reps, which is a fairly basic set and rep scheme, building up movement capacity and getting more efficient with using moderate weight,’ he says. ‘Then you can add on weight, periodising appropriately, until you eventually get into power-based moves or Olympic lifts, where the reps come down and sets increase to something like two to five reps for four or five sets.’\r\n\r\nOne important consideration is to not allow weight training to add so much stress to your body that you get injured. ‘Runners tend to be type A– we want to feel the burn – which is why it’s typical for us to sometimes run too fast or too long,’ says Fitzgerald. ‘But that also means that we can go too hard in the weights room.’",
     "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646995993/project_4_sei61/78219302_haxt4u.webp",
-    "training_type": "strength",
-    "owner": 1
-  }
-},
-{
-  "model": "training.training",
-  "pk": 6,
-  "fields": {
-    "title": "A runners diet",
-    "description": "Eating right can help you have the energy you need during your runs. A balanced diet for healthy runners should include all the essentials: carbohydrates, protein, fats, vitamins, and minerals.\r\n\r\nWithout a doubt, carbs are the best source of energy for athletes. Carbohydrates should make up about 60% to 65% of total calorie intake for most runners. However, some runners (such as sprinters) may need more than 70%, and some endurance runners may need as little as 50%.\r\n\r\nWhole-grain foods are less processed, meaning they retain more of the nutrition the grain naturally provides. Choosing whole-grain pasta over white, for example, provides you with more nutrients, including B vitamins (niacin, thiamine, folate), fiber, zinc, iron, magnesium, and manganese. Whole grains also contain fiber, which can help you feel fuller longer.\r\n\r\nProtein is used for some energy and to repair tissue damaged during training. In addition to being an essential nutrient, protein keeps you feeling full longer, which helps if you're trying to lose weight.\r\n\r\nAccording to USDA guidelines, protein should make up about 10% to 35% of your daily intake. But exercise physiologists often use a formula based on weight to determine a more accurate amount.\r\n\r\nA high-fat diet can quickly pack on the pounds, so try to ensure that no more than 20% to 35% of your total diet comes from fats. Stick to foods low in saturated fats and cholesterol.\r\n\r\nFoods such as nuts, oils, and cold-water fish provide essential fats omega-3s which are vital for good health and help prevent certain diseases. The National Institutes of Health recommends 500 mg to 1,600 mg of omega-3 fatty acids daily (1,100 mg for females ages 18 and up and 1,600 mg for adult males).",
-    "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646996616/project_4_sei61/runners-diet-blog_background_1920x1080_313dc63e-2831-42f1-b138-97750ec9af1a_1100x_ithsna.webp",
-    "training_type": "nutrition",
-    "owner": 1
-  }
-},
-{
-  "model": "training.training",
-  "pk": 7,
-  "fields": {
-    "title": "Yoga and all its benefits",
-    "description": "...",
-    "training_image": "https://res.cloudinary.com/dmbkzjwzq/image/upload/v1646996735/project_4_sei61/parkyoga-56aa41df3df78cf772aee2d1_vy0qki.jpg",
     "training_type": "nutrition",
     "owner": 1
   }

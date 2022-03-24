@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
-import { Select, Image, Text, Tabs, TabList, TabPanels, Tab, TabPanel, Flex, Box, Heading } from '@chakra-ui/react'
+import { Select, Image, Text, Tabs, TabList, TabPanels, Tab, Spinner, TabPanel, Flex, Box, Heading } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import Comments from '../Comments'
 import { createBreakpoints } from '@chakra-ui/theme-tools'
@@ -127,7 +127,7 @@ console.log(Object.keys(runsData).length && runsData)
           <Comments />
         </Flex>
         :
-        <Text>'hi'</Text>
+        <Flex justifyContent='center' alignItems='center'><Spinner color='white' /></Flex>
       }
 
     </>

@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect } from "react";
 import axios from 'axios'
-import { Image, Text, Tabs, TabList, TabPanels, Tab, TabPanel, Flex, Box, Heading } from '@chakra-ui/react'
+import { Image, Text, Tabs, TabList, TabPanels, Tab, TabPanel, Spinner, Flex, Box, Heading } from '@chakra-ui/react'
 import { Link } from "react-router-dom";
 import { createBreakpoints } from '@chakra-ui/theme-tools'
 
@@ -31,7 +31,7 @@ function Events() {
     <>
       {Object.keys(trainingData).length ?
         <Flex minHeight='100vh' direction='column'>
-          <Text mt='10' textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='home_title'>HEALTH & NUTRITION</Text>
+          <Text mt='10' textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='home_title'>TRAINING & HEALTH</Text>
           <Flex justifyContent='center' h={{ base: '500px', we: '600px', md: '1200px', xl: '500px' }}>
             <Flex w={{ base: '80%', xl: '80%' }} h='100%' direction={{ base: 'column', xl: 'row'}}>
               <Box w='100%' h={{ base: 'auto', xl: '100%' }} mr='2'>
@@ -72,7 +72,7 @@ function Events() {
               </Flex>
             </Flex>
           </Flex>
-          <Text mt='10' textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='home_title'>ENDURANCE TRAINING</Text>
+          {/* <Text mt='10' textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='home_title'>ENDURANCE TRAINING</Text>
           <Flex justifyContent='center' h={{ base: '500px', we: '600px', md: '1200px', xl: '500px' }}>
             <Flex w={{ base: '80%', xl: '80%' }} h='100%' direction={{ base: 'column', xl: 'row'}}>
               <Box w='100%' h={{ base: 'auto', xl: '100%' }} mr='2'>
@@ -83,7 +83,6 @@ function Events() {
                       <Flex h='100%' mt='15' mb='15' alignItems='center' justifyContent='center'>
                       <Text textAlign='center' lineHeight='100%' fontSize={{ base: '30px', sm: '35px', md: '40px', xl: '50px' }} className="home_image_title">{trainingData.filter(training => training.training_type === 'endurance')[0].title}</Text>
                       </Flex>
-                      {/* <Text textAlign='center' className="home_image_desc">{eventsData.filter(event => event.distance.distance === '26.2')[0].description}</Text> */}
                     </Flex>
                   </Box>
                 </Link>
@@ -123,7 +122,6 @@ function Events() {
                       <Flex h='100%' mt='15' mb='15' alignItems='center' justifyContent='center'>
                       <Text textAlign='center' lineHeight='100%' fontSize={{ base: '30px', sm: '35px', md: '40px', xl: '50px' }} className="home_image_title">{trainingData.filter(training => training.training_type === 'strength')[0].title}</Text>
                       </Flex>
-                      {/* <Text textAlign='center' className="home_image_desc">{eventsData.filter(event => event.distance.distance === '26.2')[0].description}</Text> */}
                     </Flex>
                   </Box>
                 </Link>
@@ -151,10 +149,10 @@ function Events() {
                 <hr color='white' w='100%' h='1px' />
               </Flex>
             </Flex>
-          </Flex>
+          </Flex> */}
         </Flex>
         :
-        <Flex minHeight='100vh'></Flex>
+        <Flex justifyContent='center' alignItems='center'><Spinner color='white' /></Flex>
       }
     </>
   )
