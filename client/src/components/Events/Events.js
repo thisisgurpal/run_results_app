@@ -49,8 +49,8 @@ function Events() {
               <Flex mt={{ base: '5', xl: '0' }} direction='column' flexWrap='wrap' width='100%'>
                 {eventsData.filter(event => event.distance.distance === '26.2').filter(event => event.name !== eventsData.filter(event => event.distance.distance === '26.2')[0].name).map(event => {
                   return (
-                    <Box h={{ base: '60px', md: '120px',  xl: '25%' }} width='100%' id='events_small'>
-                      <Link key={event.id} to={`/events/${event.id}`}>
+                    <Box key={event.id} h={{ base: '60px', md: '120px',  xl: '25%' }} width='100%' id='events_small'>
+                      <Link  to={`/events/${event.id}`}>
                         <hr color='white' w='100%' h='1px' />
                         <Flex name="actions" p='4' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='flex-start'>
                         <Box w='300px' display={{ base: 'none', md: 'block' }}>

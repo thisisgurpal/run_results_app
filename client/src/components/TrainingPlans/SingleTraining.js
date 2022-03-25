@@ -34,13 +34,13 @@ function SingleTraining() {
     return (
         <>
             {Object.keys(trainingData).length ?
-                <Flex minHeight='100vh' direction='column' justifyContent='center' alignItems='center'>
+                <Flex minHeight='100vh' direction='column' justifyContent='flex-start' alignItems='center'>
+                    <Flex justifyContent='center' w='100%'><Text fontSize={{ base: '40px', md: '50px', lg: '60px' }} textAlign='center' mt='10' id='individual_page_headings' w='90%' >{trainingData.title}</Text></Flex>
                     <Flex mt='10' direction={{ base: 'column' }} justifyContent='center' alignItems={{ base: 'center' }}>
                         <Flex bgGradient='linear(to-br, #FFBF00, #ffde7a)' borderTopLeftRadius={{ base: '0px', lg: '5px' }} borderTopRadius={{ base: '5px' }} direction='column' w={{ base: '80%' }}>
                             <Image w='100%' borderTopLeftRadius={{ base: '5px' }} borderTopRightRadius={{ base: '5px' }} src={trainingData.training_image}></Image>
-                            <Text fontSize={{ base: '40px', lg: '50px' }} id='single_event_title' >{trainingData.name}</Text>
                             <Flex justifyContent='center'>
-                                <Text w='80%' fontSize={{ base: '15px', lg: '16px', xl: '16px' }} mb='10'>{trainingData.description}</Text>
+                                <Text w='80%' fontSize={{ base: '15px', lg: '16px', xl: '16px' }} mt='10' mb='10'><span className='first_letter_blog'>{trainingData.description.split(' ')[0].split('')[0]}</span>{trainingData.description.split(' ')[0].split('').splice(1).join('') + ' ' + trainingData.description.split(' ').splice(1).join(' ')}</Text>
                             </Flex>
                         </Flex>
                     </Flex>

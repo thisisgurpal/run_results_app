@@ -81,8 +81,8 @@ console.log(eventId)
             <TabPanel p={4} key={index}>
               <Flex direction='column' alignItems='flex-start'>
                 {data.filter(subdata => subdata.year === tab).map(run =>
-                  <Flex direction='column' h={{ base: '50px', lg: '80px' }} w='100%'>
-                    <Flex alignItems='center' justifyContent='space-between' h='100%' w='100%' key={run.runnerID}>
+                  <Flex key={run.runnerID} direction='column' h={{ base: '50px', lg: '80px' }} w='100%'>
+                    <Flex alignItems='center' justifyContent='space-between' h='100%' w='100%' >
                       <Flex alignItems='center'>
                       <Text id='position' fontSize={{ base: '40px', lg: '50px', xl: '60px' }}>{run.position}</Text>
                       <Link to={`/runner/${run.runnerID}`}>

@@ -157,9 +157,9 @@ const Comments = () => {
               return new Date(b.created_at) - new Date(a.created_at)
           }).map(comment => {
               return (
-                <Flex direction='column'>
+                <Flex key={comment.id} direction='column'>
                   <hr color='white' width='100%' height='1px' />
-                  <Flex key={comment.id} rounded='md' w='100%' mt='5'>
+                  <Flex rounded='md' w='100%' mt='5'>
                     <Link to={`/profile/${comment.user.id}`}></Link>
                     <Box w='100%'>
 

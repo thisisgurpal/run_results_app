@@ -153,7 +153,7 @@ function RunnerProfile() {
             </Flex>
             <Text color='#fff' id='runner_name_title' textAlign='center'>{runnerData.first_name + ' ' + runnerData.last_name}</Text>
           </Box>
-          {userIsAuthenticated() && <div value={isClick} classname="App">
+          {userIsAuthenticated() && <div value={isClick} className="App">
           {/* <Button value={favouriteRunner} onClick={favouriteRunnerFunc}> */}
             <Heart isClick={isClick} onClick={favouriteRunnerFunc} />
           {/* </Button> */}
@@ -164,14 +164,14 @@ function RunnerProfile() {
               <Flex backgroundColor='#101010' p='20px' borderRadius='20px' ml='2' direction='column' flexWrap='wrap' width='100%' h='100%'>
                 {runData.map(run => {
                   return (
-                    <Box display='flex' justifyContent='space-between' h='150px' mt='20px'>
-                      <Link class='runner_page_event_link' key={run.event.id} to={`/events/${run.event.id}`}>
+                    <Box key={run.event.id} display='flex' justifyContent='space-between' h='150px' mt='20px'>
+                      <Link className='runner_page_event_link' key={run.event.id} to={`/events/${run.event.id}`}>
                         <hr color='white' w='100%' h='1px' />
                         <Flex name="actions" p='4' mb='5' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='space-between'>
                           {/* <Image mr='10' src={run.event.event_image} h='100%' alt=''></Image> */}
-                          <Text id='events_small'>
+                          <div id='events_small'>
                             {run.event.name} <Text>{run.year}</Text>
-                          </Text>
+                          </div>
                           <Box h='120px' w='300px' backgroundColor='#fff' borderRadius='5px' >
                             <Flex h='100%' p='10px' direction='column' justifyContent='center' alignItems='center'>
                               <Box display='flex'>

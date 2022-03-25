@@ -19,8 +19,8 @@ function Training() {
   useEffect(() => {
     const getTraining = async () => {
       const { data } = await axios.get('/api/training/') // * <-- replace with your endpoint
-      console.log(data)
-      setTrainingData(data)
+      console.log(data.filter(training => training.description !== '...'))
+      setTrainingData(data.filter(training => training.description !== '...'))
     }
     getTraining()
   }, [])
@@ -47,10 +47,10 @@ function Training() {
                 </Link>
               </Box>
               <Flex mt={{ base: '5', xl: '0' }} direction='column' flexWrap='wrap' width='100%'>
-                {trainingData.filter(training => training.training_type === 'nutrition').filter(training => training.name !== trainingData.filter(training => training.training_type === 'nutrition')[0].title).map(training => {
+                {trainingData.filter(training => training.training_type === 'nutrition').filter(training => training.title !== trainingData.filter(training => training.training_type === 'nutrition')[0].title).map(training => {
                   return (
-                    <Box h={{ base: '60px', md: '120px',  xl: '25%' }} id='events_small'>
-                      <Link key={training.id} to={`/training/${training.id}`}>
+                    <Box key={training.id} h={{ base: '60px', md: '120px',  xl: '25%' }} id='events_small'>
+                      <Link  to={`/training/${training.id}`}>
                         <hr color='white' w='100%' h='1px' />
                         <Flex name="actions" p='4' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='center'>
                           <Box w='300px' display={{ base: 'none', md: 'block' }}>

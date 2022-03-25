@@ -66,7 +66,7 @@ console.log(Object.keys(profileData).length && profileData)
         <TabPanels>
           <TabPanel display='flex' alignItems='center' p={4}><Flex w='100%' direction='column' alignItems='flex-start'>
           {data.fav_training.map(training =>
-              <Flex mt='10px' w='100%' alignItems='center' key={training.training.id}><Link class='fav_runner_link' to={`/training`}>
+              <Flex mt='10px' w='100%' alignItems='center' key={training.training.id}><Link className='fav_runner_link' to={`/training`}>
                 <hr border-color='#6c6c6c' color='grey' w='100%' h='1px' />
                 <Flex w='100%' alignItems='center'>
                   <Text mt='2' mb='2' textAlign='center' width='100%' id='events_small' fontSize='50px'>{training.training.title}</Text>
@@ -77,7 +77,7 @@ console.log(Object.keys(profileData).length && profileData)
           </Flex></TabPanel>
           <TabPanel display='flex' alignItems='center' p={4}><Flex w='100%' direction='column' alignItems='flex-start'>
             {data.user_runners.map(runner =>
-              <Flex mt='10px' w='100%' alignItems='center' key={runner.id}><Link class='fav_runner_link' to={`/runner/${runner.runners.id}`}>
+              <Flex mt='10px' w='100%' alignItems='center' key={runner.id}><Link className='fav_runner_link' to={`/runner/${runner.runners.id}`}>
                 <hr border-color='#6c6c6c' color='grey' w='100%' h='1px' />
                 <Flex w='100%' alignItems='center'>
                   <Text mt='2' mb='2' textAlign='center' width='100%' id='events_small' fontSize='50px'>{runner.runners.first_name + ' ' + runner.runners.last_name}</Text>
@@ -95,7 +95,7 @@ console.log(Object.keys(profileData).length && profileData)
             {data.comments.length ?
             data.comments.map(comment => {
               return (
-                <Flex direction='column' w='100%'>
+                <Flex key={comment.id} direction='column' w='100%'>
                   <hr color='white' width='100%' height='1px' />
                   <Flex key={comment.id} rounded='md' w='100%' mt='5'>
                     <Link to={`/profile/${profileData.id}`}></Link>
