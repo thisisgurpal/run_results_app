@@ -38,7 +38,7 @@ function Events() {
                 <Link to={`/events/${eventsData.filter(event => event.distance.distance === '26.2')[0].id}`}>
                   <Box id='main_event' color='black' display='flex' justifyContent='center' h={{ base: 'auto', xl: '100%' }} alignItems='center' w='100%' bgGradient='linear(to-br, #FFBF00, #ffde7a)'>
                     <Flex direction='column' w='100%' h='100%'>
-                      <Image h='70%' src={eventsData.filter(event => event.distance.distance === '26.2')[0].event_image} alt=''></Image>
+                      <Image w='100%' src={eventsData.filter(event => event.distance.distance === '26.2')[0].event_image} alt=''></Image>
                       <Flex h='100%' mt='15' mb='15' alignItems='center' justifyContent='center'>
                       <Text textAlign='center' lineHeight='100%' fontSize={{ base: '30px', sm: '35px', md: '40px', xl: '50px' }} className="home_image_title">{eventsData.filter(event => event.distance.distance === '26.2')[0].name}</Text>
                       </Flex>
