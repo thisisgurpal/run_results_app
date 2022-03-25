@@ -19,3 +19,16 @@ class TrainingListView(APIView):
         print('training', training)
         print('serialised_training', serialized_training)
         return Response(serialized_training.data, status=status.HTTP_200_OK)
+
+class TrainingDetailView(APIView):
+
+    def get_training(self, pk):
+        try:
+            return Training.objects.get(pk=pk)
+        except Training.DoesNotExist:
+            raise NotFound(detail="Training not found")
+
+    def get(self, _request, pk):
+        training = self.get_training(pk)
+        serialized_training = PopulatedTrainingSerializer(training)
+        return Response(serialized_training.data, status=status.HTTP_200_OK)

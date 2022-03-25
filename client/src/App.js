@@ -10,6 +10,7 @@ import Login from './components/auth/Login'
 import Register from './components/auth/Register'
 import SingleEvent from './components/Events/SingleEvent'
 import Training from './components/TrainingPlans/Training'
+import SingleTraining from './components/TrainingPlans/SingleTraining'
 import EventsForYou from './components/Events/EventsForYou'
 import Footer from './components/Footer'
 import { Flex } from '@chakra-ui/react'
@@ -38,6 +39,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/events/:eventId" element={<SingleEvent />} />
         <Route path="/training" element={<Training />} />
+        <Route path="/training/:trainingId" element={<SingleTraining />} />
         <Route path="/events-for-you" element={<EventsForYou />} />
         <Route path="/runner/:runnerID" element={<RunnerProfile />} />
       </Routes>
