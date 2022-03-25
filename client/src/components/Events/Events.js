@@ -57,7 +57,7 @@ function Events() {
                           <Image display={{ base: 'none', md: 'block' }} mr='10' src={event.event_image} w={{ base: '150px', xl: '200px' }} alt=''></Image>
                             </Box>
                             <Flex mt='3' mb='3' w='100%' justifyContent='center'>
-                            <Text fontSize={{ base: '18px', sm: '22px', md: '28px', xl: '30px' }} textAlign='center'>
+                            <Text fontSize={{ base: '18px', sm: '22px', md: '28px', xl: '30px' }} color='white' textAlign='center'>
                             {event.name}
                           </Text>
                             </Flex>

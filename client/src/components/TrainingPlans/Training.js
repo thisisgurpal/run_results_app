@@ -38,7 +38,7 @@ function Training() {
                 <Link to={`/training/${trainingData.filter(training => training.training_type === 'nutrition')[0].id}`}>
                   <Box id='main_event' color='black' display='flex' justifyContent='center' h={{ base: 'auto', xl: '100%' }} alignItems='center' w='100%' bgGradient='linear(to-br, #FFBF00, #ffde7a)'>
                     <Flex direction='column' w='100%' h='100%'>
-                      <Image h='70%' src={trainingData.filter(training => training.training_type === 'nutrition')[0].training_image} alt=''></Image>
+                      <Image w='100%' src={trainingData.filter(training => training.training_type === 'nutrition')[0].training_image} alt=''></Image>
                       <Flex h='100%' mt='15' mb='15' alignItems='center' justifyContent='center'>
                       <Text textAlign='center' lineHeight='100%' fontSize={{ base: '30px', sm: '35px', md: '40px', xl: '50px' }} className="home_image_title">{trainingData.filter(training => training.training_type === 'nutrition')[0].title}</Text>
                       </Flex>
@@ -57,7 +57,7 @@ function Training() {
                           <Image display={{ base: 'none', md: 'block' }} mr='10' src={training.training_image} w={{ base: '150px', xl: '200px' }} alt=''></Image>
                             </Box>
                             <Flex mt='3' mb='3' w='100%' justifyContent='center'>
-                            <Text fontSize={{ base: '18px', sm: '22px', md: '28px', xl: '30px' }} textAlign='center'>
+                            <Text fontSize={{ base: '18px', sm: '22px', md: '28px', xl: '30px' }} color='white' textAlign='center'>
                             {training.title}
                           </Text>
                             </Flex>
