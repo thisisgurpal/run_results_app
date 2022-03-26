@@ -112,7 +112,7 @@ function RunnerProfile() {
                 src={runnerData.profile_image !== '' ? runnerData.profile_image : ''}
                 alt='profile picture' /> */}
             </Flex>
-            <Text color='#fff' id='user_name_title' fontSize={{ base: '30px', sm: '45px', md: '60px', xl: '80px' }} textAlign='center'>{runnerData.first_name + ' ' + runnerData.last_name}</Text>
+            <Text color='#fff' id='user_name_title' mb='5' fontSize={{ base: '30px', sm: '45px', md: '60px', xl: '80px' }} textAlign='center'>{runnerData.first_name + ' ' + runnerData.last_name}</Text>
           </Box>
           {userIsAuthenticated() && <div value={isClick} className="App">
           {/* <Button value={favouriteRunner} onClick={favouriteRunnerFunc}> */}
@@ -130,11 +130,11 @@ function RunnerProfile() {
                         <hr color='white' w='100%' h='1px' />
                         <Flex name="actions" p='4' mb='5' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='space-between'>
                           {/* <Image mr='10' src={run.event.event_image} h='100%' alt=''></Image> */}
-                          <Flex id='user_page_links' direction='column' alignItems='flex-start'>
-                          <Text fontSize={{ base: '15px', sm: '20px', md: '30px', xl: '40px' }} >
+                          <Flex direction='column' alignItems='flex-start'>
+                          <Text id='user_page_links' fontSize={{ base: '15px', sm: '20px', md: '30px', xl: '40px' }} >
                             {run.event.name} 
                           </Text>
-                          <Text fontSize={{ base: '15px', sm: '20px', md: '30px', xl: '40px' }} >{run.year}</Text>
+                          <Text color='white' fontSize={{ base: '15px', sm: '20px', md: '30px', xl: '40px' }} >{run.year}</Text>
                             </Flex>
                           <Box h={{ base: '60px', sm: '80px', md: '100px', xl: '120px' }} w={{ base: '100px', sm: '150px', md: '200px', xl: '300px' }} backgroundColor='#fff' borderRadius='5px' >
                             <Flex h='100%' p='10px' direction='column' justifyContent='center' alignItems='center'>

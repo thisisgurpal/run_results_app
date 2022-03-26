@@ -49,7 +49,7 @@ function Training() {
               <Flex mt={{ base: '5', xl: '0' }} direction='column' flexWrap='wrap' width='100%'>
                 {trainingData.filter(training => training.training_type === 'nutrition').filter(training => training.title !== trainingData.filter(training => training.training_type === 'nutrition')[0].title).map(training => {
                   return (
-                    <Box key={training.id} h={{ base: '60px', md: '120px',  xl: '25%' }} id='events_small'>
+                    <Box key={training.id} h={{ base: '60px', md: '120px',  xl: '25%' }}>
                       <Link  to={`/training/${training.id}`}>
                         <hr color='white' w='100%' h='1px' />
                         <Flex name="actions" p='4' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='center'>
@@ -57,7 +57,7 @@ function Training() {
                           <Image display={{ base: 'none', md: 'block' }} mr='10' src={training.training_image} w={{ base: '150px', xl: '200px' }} alt=''></Image>
                             </Box>
                             <Flex mt='3' mb='3' w='100%' justifyContent='center'>
-                            <Text fontSize={{ base: '18px', sm: '22px', md: '28px', xl: '30px' }} color='white' textAlign='center'>
+                            <Text fontSize={{ base: '18px', sm: '22px', md: '28px', xl: '30px' }} id='user_page_links' textAlign='center'>
                             {training.title}
                           </Text>
                             </Flex>

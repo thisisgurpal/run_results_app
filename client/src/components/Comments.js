@@ -115,7 +115,7 @@ const Comments = () => {
     <>
       {userIsAuthenticated() &&
         <>
-          <Box mt='6' p='4' backgroundColor='#101010' w='50%' boxShadow='base' rounded='md'>
+          <Box mt='6' p='4' backgroundColor='#101010' w={{ base: '80%', lg: '40%' }} boxShadow='base' rounded='md'>
             <form onSubmit={handleSubmit}>
               <Text mb='8px' color='#fff' >Join the conversation</Text>
               <Textarea h='120px' backgroundColor='#FFFFFF'
@@ -149,7 +149,7 @@ const Comments = () => {
         </>
       }
       {comments ?
-        <Box mt='6' p='4' w='50%' background='#101010' rounded='lg'>
+        <Box mt='6' p='4' w={{ base: '80%', lg: '40%' }} background='#101010' rounded='lg'>
 
           <Text color='#fff' mb='4'>Comments</Text>
           {comments.length ?
