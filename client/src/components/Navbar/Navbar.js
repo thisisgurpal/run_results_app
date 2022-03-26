@@ -62,9 +62,10 @@ const Navbar = ({ toggle }) => {
                 <NavLink to="/events-for-you" activestyle="true">
                     Marathons For You
                 </NavLink>
+                {userIsAuthenticated() && <NavBtn2 onClick={gotToUserProfile} activestyle="true">Profile</NavBtn2>}
             </NavMenu>
             {userIsAuthenticated() ? 
-            <><NavBtn2 onClick={gotToUserProfile} activestyle="true">Profile</NavBtn2>
+            <>
             <NavBtn>
                     <NavBtnLink to='/' onClick={handleLogout}>Logout</NavBtnLink>
                 </NavBtn></>

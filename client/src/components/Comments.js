@@ -155,7 +155,7 @@ const Comments = () => {
           {comments.length ?
             comments.sort(function (a, b) {
               return new Date(b.created_at) - new Date(a.created_at)
-          }).map(comment => {
+            }).map(comment => {
               return (
                 <Flex key={comment.id} direction='column'>
                   <hr color='white' width='100%' height='1px' />
@@ -164,31 +164,31 @@ const Comments = () => {
                     <Box w='100%'>
 
                       <Flex w='100%' direction='column'>
-                        <Flex justifyContent='space-between'>
-                        <Flex alignItems='center'>
-                          <Link to={`/profile/${comment.user.id}`}>
-                          <Avatar src={comment.user.profile_image} size='md' />
-                          </Link>
+                        <Flex mb='2' justifyContent='space-between'>
                           <Flex alignItems='center'>
-                          <Link to={`/profile/${comment.user.id}`}>
-                            <Text ml='3' fontSize='20px' color='white' mr='2'>
-                              {`${comment.user.first_name + ' ' + comment.user.last_name} `}
-                            </Text>
+                            <Link to={`/profile/${comment.user.id}`}>
+                              <Avatar src={comment.user.profile_image} size='md' />
                             </Link>
-                          </Flex>
-                          
-                          
+                            <Flex alignItems='center'>
+                              <Link to={`/profile/${comment.user.id}`}>
+                                <Text ml='3' fontSize={{ base: '10px', sm: '15px', md: '18px', xl: '20px' }} color='white' mr='2'>
+                                  {`${comment.user.first_name + ' ' + comment.user.last_name} `}
+                                </Text>
+                              </Link>
+                            </Flex>
 
+
+
+                          </Flex>
+                          {userIsAuthenticated() && profileData.id === comment.user.id &&
+                            <Button id={comment.id} onClick={deleteComment}>Delete</Button>
+                          }
                         </Flex>
-                        {userIsAuthenticated() && profileData.id === comment.user.id && 
-                        <Button id={comment.id} onClick={deleteComment}>Delete</Button>
-                        }
-                        </Flex>
-                        <Text color='grey' fontSize='15px' lineHeight='190%'>{`  ${generateDate(comment)} at ${String(comment.created_at).substring(11, 16)}`}</Text>
+                        <Text color='grey' mb='2' fontSize={{ base: '8px', sm: '10px', md: '13px', xl: '15px' }} lineHeight='190%'>{`  ${generateDate(comment)} at ${String(comment.created_at).substring(11, 16)}`}</Text>
                       </Flex>
                       <Image borderTopRadius='5px' w='100%' src={comment.comment_image}></Image>
                       <Box backgroundColor='#101010' mb='7' borderBottomRadius='5px' h='100px'>
-                        <Text fontSize='20px' color='white' p='5' >{comment.description}</Text>
+                        <Text fontSize={{ base: '10px', sm: '15px', md: '18px', xl: '20px' }} color='white' p='5' >{comment.description}</Text>
                       </Box>
                     </Box>
                   </Flex>

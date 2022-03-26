@@ -100,45 +100,6 @@ function RunnerProfile() {
     }
   }
 
-  const removeFavouriteRunner = async (e) => {
-    e.preventDefault()
-
-  }
-
-  function DataTabs({ data }) {
-    return (
-      <Tabs variant='enclosed' w='80%'>
-        <TabList>
-          <Tab>Events Ran</Tab>
-        </TabList>
-        <TabPanels>
-          <TabPanel display='flex' alignItems='center' p={4}><Flex direction='column' alignItems='flex-start'>
-            <Flex alignItems='center'>
-              {/* <Select backgroundColor='white' color='black' placeholder='Select option'>
-                            <option value='240'>240</option>
-                            <option value='200'>200</option>
-                            <option value='150'>150</option>
-                            <option value='100'>100</option>
-                            <option value='50'>50</option>
-                            <option value='26.2'>26.2</option>
-                        </Select> */}
-              {data.map(run =>
-                <Flex alignItems='center' key={run.id}>
-                  <Link to={`/events/${run.event.id}`}>
-                    <Text ml='10' fontSize='50px' id='position_name'>{run.event.name}</Text>
-                  </Link>
-                  <Text fontSize='50px'>{' (Place: ' + run.position + ', Time: ' + run.hours + ':' + run.minutes + ')'}</Text>
-                  {/* <Text ml='10' fontSize='50px' id='position_time'>{run.hours + ':' + run.minutes}</Text> */}
-                </Flex>
-              )}
-              <Link to='/training'>
-                <Text ml='10' fontSize='50px' id='position_name'></Text>
-              </Link></Flex>
-          </Flex></TabPanel>
-        </TabPanels>
-      </Tabs>
-    )
-  }
   return (
     <>
       {Object.keys(runnerData).length && Object.keys(runData).length ?
@@ -151,7 +112,7 @@ function RunnerProfile() {
                 src={runnerData.profile_image !== '' ? runnerData.profile_image : ''}
                 alt='profile picture' /> */}
             </Flex>
-            <Text color='#fff' id='runner_name_title' textAlign='center'>{runnerData.first_name + ' ' + runnerData.last_name}</Text>
+            <Text color='#fff' id='user_name_title' fontSize={{ base: '30px', sm: '45px', md: '60px', xl: '80px' }} textAlign='center'>{runnerData.first_name + ' ' + runnerData.last_name}</Text>
           </Box>
           {userIsAuthenticated() && <div value={isClick} className="App">
           {/* <Button value={favouriteRunner} onClick={favouriteRunnerFunc}> */}
@@ -160,27 +121,30 @@ function RunnerProfile() {
       </div>}
           
           <Flex direction='column' justifyContent='center' alignItems='center'>
-            <Box width='800px' h='1000px'>
+            <Box width={{ base: '300px', sm: '450px', md: '600px', xl: '800px' }}>
               <Flex backgroundColor='#101010' p='20px' borderRadius='20px' ml='2' direction='column' flexWrap='wrap' width='100%' h='100%'>
                 {runData.map(run => {
                   return (
-                    <Box key={run.event.id} display='flex' justifyContent='space-between' h='150px' mt='20px'>
+                    <Box key={run.event.id} display='flex' justifyContent='space-between'>
                       <Link className='runner_page_event_link' key={run.event.id} to={`/events/${run.event.id}`}>
                         <hr color='white' w='100%' h='1px' />
                         <Flex name="actions" p='4' mb='5' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='space-between'>
                           {/* <Image mr='10' src={run.event.event_image} h='100%' alt=''></Image> */}
-                          <div id='events_small'>
-                            {run.event.name} <Text>{run.year}</Text>
-                          </div>
-                          <Box h='120px' w='300px' backgroundColor='#fff' borderRadius='5px' >
+                          <Flex id='user_page_links' direction='column' alignItems='flex-start'>
+                          <Text fontSize={{ base: '15px', sm: '20px', md: '30px', xl: '40px' }} >
+                            {run.event.name} 
+                          </Text>
+                          <Text fontSize={{ base: '15px', sm: '20px', md: '30px', xl: '40px' }} >{run.year}</Text>
+                            </Flex>
+                          <Box h={{ base: '60px', sm: '80px', md: '100px', xl: '120px' }} w={{ base: '100px', sm: '150px', md: '200px', xl: '300px' }} backgroundColor='#fff' borderRadius='5px' >
                             <Flex h='100%' p='10px' direction='column' justifyContent='center' alignItems='center'>
                               <Box display='flex'>
-                                <Text w='100%' fontSize='30px' color='black' textAlign='center'>
+                                <Text w='100%' fontSize={{ base: '10px', sm: '15px', md: '20px', xl: '30px' }} color='black' textAlign='center'>
                                   {new Date(((run.hours * 60 * 60) + (run.minutes * 60) + run.seconds) * 1000).toISOString().substr(11, 8)}
                                 </Text>
                               </Box>
                               <Box display='flex'>
-                                <Text fontSize='30px' id='runner_page_position' fontWeight='bold' w='100%' color='black' textAlign='center' >Postion: {run.position}</Text>
+                                <Text fontSize={{ base: '10px', sm: '15px', md: '20px', xl: '30px' }} id='runner_page_position' fontWeight='bold' w='100%' color='black' textAlign='center' >Postion: {run.position}</Text>
                               </Box>
                             </Flex>
                           </Box>

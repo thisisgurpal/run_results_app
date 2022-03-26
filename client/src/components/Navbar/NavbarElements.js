@@ -99,6 +99,10 @@ cursor: pointer;
 &:hover {
     transform: scale(1.1);
 }
+
+@media screen and (max-width: 900px) {
+    display: none;
+}
 `
 
 
