@@ -126,8 +126,8 @@ function EventsForYou() {
     return (
         <Flex minHeight='100vh' w='100%' direction='column' alignItems='center'>
             <Flex direction='row' w='100%' justifyContent='center' alignItems='center'>
-                <Flex id='input_prs' p='20' borderRadius='10px' m='10' direction='column' w='600px'>
-                    <Text textAlign='center' lineHeight= '100%' id='prs_input_title'>Enter your best runs:</Text>
+                <Flex id='input_prs' p='10' borderRadius='10px' m='10' direction='column' w='600px'>
+                    <Text textAlign='center' lineHeight= '100%' fontSize={{ base: '25px', sm: '30px', md: '45px', xl: '60px' }} id='prs_input_title'>Enter your best runs:</Text>
                     <Text textAlign='center' mt='5'>Find out what events you are qualified to run in!</Text>
                     <Flex direction='row' alignItems='center' mt={5}>
                         <Text w='100px' mr='8'>Age:</Text>
@@ -232,23 +232,27 @@ function EventsForYou() {
             </Flex>
             <>
                 {Object.keys(filterEventsData).length ?
-                    <Flex ml='2' direction='column' alignItems='center' flexWrap='wrap' width='80%' h='800px'>
+                    <Flex mt={{ base: '5', xl: '0' }} direction='column' flexWrap='wrap' width='60%'>
                     {filterEventsData.map(event => {
                       return (
-                        <Box key={event.id} h='25%' w='100%' id='events_small'>
-                          <Link to={`/events/${event.id}`}>
-                            <hr color='white' width='100%' height='1px' />
-                            <Flex name="actions" p='4' mb='5' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='flex-start'>
-                              <Image mr='10' src={event.event_image} h='100%' alt=''></Image>
-                              <Text textAlign='center'>
+                        <Box key={event.id} h={{ base: '60px', md: '120px',  xl: '25%' }} width='100%'>
+                          <Link  to={`/events/${event.id}`}>
+                            <hr color='white' w='100%' h='1px' />
+                            <Flex name="actions" p='4' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='flex-start'>
+                            <Box w='300px' display={{ base: 'none', md: 'block' }}>
+                              <Image display={{ base: 'none', md: 'block' }} mr='10' src={event.event_image} w={{ base: '150px', xl: '200px' }} alt=''></Image>
+                                </Box>
+                                <Flex mt='3' mb='3' w='100%' justifyContent='center'>
+                                <Text fontSize={{ base: '18px', sm: '22px', md: '28px', xl: '30px' }} id='user_page_links' textAlign='center'>
                                 {event.name}
                               </Text>
+                                </Flex>
                             </Flex>
                           </Link>
                         </Box>
                       )
                     })}
-                    <hr color='white' width='100%' height='1px' />
+                    <hr color='white' w='100%' h='1px' />
                   </Flex>
                     :
                     ''

@@ -1,9 +1,11 @@
 import { Parallax, ParallaxLayer } from '@react-spring/parallax'
-import { Box } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 
 const Footer = () => {
     return(
-        <Box mt='100px' w='100%' h='400px' backgroundColor='grey'></Box>
+        <Flex justifyContent='center' alignItems='center' mt='100px' w='100%' h='50px' backgroundColor='grey'>
+            <Text>Created by Gurpal Gohler</Text>
+        </Flex>
     )
     
 }

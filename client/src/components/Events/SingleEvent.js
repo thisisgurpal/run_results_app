@@ -106,7 +106,8 @@ console.log(eventId)
 console.log(Object.keys(runsData).length && runsData)
   return (
     <>
-      {Object.keys(filterRuns).length ?
+    {Object.keys(eventData).length ?
+      Object.keys(filterRuns).length ?
         <Flex minHeight='100vh' direction='column' justifyContent='center' alignItems='center'>
           <Flex mt='10' direction={{ base: 'column', lg: 'row' }} justifyContent='center' alignItems={{ base: 'center', lg: 'stretch' }}>
             <Flex bgGradient='linear(to-br, #FFBF00, #ffde7a)' borderTopLeftRadius={{ base: '0px', lg: '5px' }} borderTopRadius={{ base: '5px'}} direction='column' w={{ base: '80%', lg: '40%' }}>
@@ -125,6 +126,10 @@ console.log(Object.keys(runsData).length && runsData)
           <Text fontSize={{ base: '25px', lg: '40px', xl: '50px' }} textAlign='center' w={{ base: '60%', lg: '80%' }} id='event_comment_l1'>Have you been to this event before?</Text>
           <Text fontSize={{ base: '25px', lg: '40px', xl: '50px' }} textAlign='center' w={{ base: '60%', lg: '80%' }} id='event_comment_l2'>If so, we'd love to see your pictures and thoughts!</Text>
           <Comments />
+        </Flex>
+        :
+        <Flex justifyContent='center' alignItems='flex-start'>
+          <Text color='white'>Comming Soon</Text>
         </Flex>
         :
         <Flex justifyContent='center' alignItems='center'><Spinner color='white' /></Flex>
