@@ -31,7 +31,9 @@ function Events() {
     <>
       {Object.keys(eventsData).length ?
         <Flex minHeight='100vh' direction='column'>
-          <Text mt='10' textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='individual_page_headings'>MARATHONS</Text>
+          <Flex h={{ base: '80px', sm: '110px', md: '125px', lg: '150px' }} justifyContent='center' alignItems='center'>
+            <Text textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px' }} id='individual_page_headings'>MARATHONS</Text>
+          </Flex>
           <Flex justifyContent='center' h={{ base: '500px', we: '600px', md: '1200px', xl: '500px' }}>
             <Flex w={{ base: '60%', xl: '60%' }} h='100%' direction={{ base: 'column' }}>
               <Box w='100%' h={{ base: 'auto', xl: '100%' }} mr='2'>
@@ -40,7 +42,7 @@ function Events() {
                     <Flex direction='column' w='100%' h='100%'>
                       <Image w='100%' src={eventsData.filter(event => event.distance.distance === '26.2')[0].event_image} alt=''></Image>
                       <Flex h='100%' mt='15' mb='15' alignItems='center' justifyContent='center'>
-                      <Text textAlign='center' lineHeight='100%' fontSize={{ base: '30px', sm: '35px', md: '40px', xl: '50px' }} className="home_image_title">{eventsData.filter(event => event.distance.distance === '26.2')[0].name}</Text>
+                        <Text textAlign='center' lineHeight='100%' fontSize={{ base: '30px', sm: '35px', md: '40px', xl: '50px' }} className="home_image_title">{eventsData.filter(event => event.distance.distance === '26.2')[0].name}</Text>
                       </Flex>
                     </Flex>
                   </Box>
@@ -49,18 +51,18 @@ function Events() {
               <Flex mt={{ base: '5', xl: '0' }} direction='column' flexWrap='wrap' width='100%'>
                 {eventsData.filter(event => event.distance.distance === '26.2').filter(event => event.name !== eventsData.filter(event => event.distance.distance === '26.2')[0].name).map(event => {
                   return (
-                    <Box key={event.id} h={{ base: '60px', md: '120px',  xl: '25%' }} width='100%'>
-                      <Link  to={`/events/${event.id}`}>
+                    <Box key={event.id} h={{ base: '60px', md: '120px', xl: '25%' }} width='100%'>
+                      <Link to={`/events/${event.id}`}>
                         <hr color='white' w='100%' h='1px' />
                         <Flex name="actions" p='4' color='white' h='100%' flexDirection='row' alignItems='center' justifyContent='flex-start'>
-                        <Box w='300px' display={{ base: 'none', md: 'block' }}>
-                          <Image display={{ base: 'none', md: 'block' }} mr='10' src={event.event_image} w={{ base: '150px', xl: '200px' }} alt=''></Image>
-                            </Box>
-                            <Flex mt='3' mb='3' w='100%' justifyContent='center'>
+                          <Box w='300px' display={{ base: 'none', md: 'block' }}>
+                            <Image display={{ base: 'none', md: 'block' }} mr='10' src={event.event_image} w={{ base: '150px', xl: '200px' }} alt=''></Image>
+                          </Box>
+                          <Flex mt='3' mb='3' w='100%' justifyContent='center'>
                             <Text fontSize={{ base: '18px', sm: '22px', md: '28px', xl: '30px' }} id='user_page_links' textAlign='center'>
-                            {event.name}
-                          </Text>
-                            </Flex>
+                              {event.name}
+                            </Text>
+                          </Flex>
                         </Flex>
                       </Link>
                     </Box>
