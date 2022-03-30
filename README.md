@@ -1,5 +1,6 @@
 # General Assembly Project 4 - RunnersUniverse
-<img src="https://user-images.githubusercontent.com/97416784/160813446-b3cfeb0a-2bdc-4fa1-bcda-4a5a6963053f.JPG" width="1000">
+<img src="https://user-images.githubusercontent.com/97416784/160816457-4e0258b7-20b2-45d4-a9e6-c4da5daedd5c.JPG" width="400">
+<img src="https://user-images.githubusercontent.com/97416784/160816540-2adf83ae-7bc6-4e7f-98ab-d293ab876477.JPG" width="400">
 
 # Link
 https://reciplease-thisisgurpal.netlify.app/
