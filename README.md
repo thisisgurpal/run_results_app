@@ -20,6 +20,7 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 * Have visually impressive design.
 
 # Technologies used
+Python, JavaScript, Django, Django REST Framework, PostgreSQL, Axios, React, SASS, CSS, Chakra, Cloudinary, React Router DOM.
 
 # Planning
 
