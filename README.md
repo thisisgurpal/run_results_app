@@ -7,15 +7,21 @@ This was a solo project where I created a running app that allows visitors to ge
   </tr>
 </table>
 
-# Link
-https://reciplease-thisisgurpal.netlify.app/
+# Links
+<h3>Application</h3>
+RunnersUniverse: https://runnersuniverse.herokuapp.com/
+<h3>Contact</h3>
+Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
+
 # Brief
 
 # Technologies used
 
-# Controls
+# Planning
 
-# Approach taken
+# Walk through
+
+# Code examples
 
 # Bugs
 
@@ -24,4 +30,4 @@ https://reciplease-thisisgurpal.netlify.app/
 # Wins
 
 # Contact
-https://www.linkedin.com/in/gurpal-gohler/
+
