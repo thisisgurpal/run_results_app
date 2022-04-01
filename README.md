@@ -14,7 +14,10 @@ RunnersUniverse: https://runnersuniverse.herokuapp.com/
 Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 
 # Brief
-
+* Build a full-stack application making my own back end and front end.
+* Use a Python Django API using Django REST Framework to serve my data from a Postgres database.
+* Consume our API with a seperate front-end built in react.
+* Have visually impressive design.
 
 # Technologies used
 
