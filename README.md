@@ -49,7 +49,7 @@ Now you are logged in the drown menu will change so you can view your profile an
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161327720-674273fc-abc2-4b15-b919-57b65b092d32.JPG" width="500">
 <h3>Profile page</h3>
-On your profile page you can see your saved blogs and saved runners as well as any comments you have made on events. These comments you will be able to delete if you wish.
+On your profile page you can see your saved blogs and saved runners as well as any comments you have made on events. These comments you will be able to delete if you wish. You'll be able to click on there runners and blogs to navigate to their pages.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161328294-a0696302-beb4-44ad-bd64-fc0b39eb2040.JPG" width="500">
 <h3>Events</h3>
@@ -61,7 +61,7 @@ When you click on your desired event you will be able to get details about it an
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161327881-70e6c351-18ba-45a9-a72b-c0c7e89bd365.JPG" width="1000">
 <h3>Comment on event</h3>
-Scrolling down on the event page you'll find a section to leave comments and view all comments.
+Scrolling down on the event page you'll find a section to leave comments and view all comments. You can click on the avatars and names to navigate to the users profiles.
 <h3></h3>
 <table>
 <tr>
@@ -70,7 +70,7 @@ Scrolling down on the event page you'll find a section to leave comments and vie
 </tr>
   </table>
 <h3>View runner profile</h3>
-If you click on a runner from the leaderboard on the events page, you'll be taken to the runners profile. Here you can see all there runs and if you click the heart button they will be saved to your profile.
+If you click on a runner from the leaderboard on the events page, you'll be taken to the runners profile. Here you can see all there runs and if you click the heart button they will be saved to your profile. You can click on the running event to navigate to the event page.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161328013-f5a66299-deee-41b1-9adb-763ea34413b3.JPG" width="500">
 <h3>Training and Nutrition blogs</h3>
@@ -83,7 +83,7 @@ On the Training and Nutrition page you can view all blogs. When clicked into a b
 </tr>
   </table>
 <h3>Marathons for you</h3>
-On the marathons for you page, you can input your best marathon run and see what events you have reached the requirements for.
+On the marathons for you page, you can input your best marathon run and see what events you have reached the requirements for. You are then able click on these running events and view the event page to get more info.
 <h3></h3>
 <table>
 <tr>
