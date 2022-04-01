@@ -23,8 +23,19 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 Python, JavaScript, Django, Django REST Framework, PostgreSQL, Axios, React, SASS, CSS, Chakra, Cloudinary, React Router DOM.
 
 # Planning
+<img src="https://user-images.githubusercontent.com/97416784/161325623-b22e0158-c5e8-492f-8a7d-aa485a3d166c.JPG" width="1000">
 
 # Walk through
+<h3>Home page and dropdown</h3>
+<h3>Login and register</h3>
+<h3>Dropdown after logged in</h3>
+<h3>Events</h3>
+<h3>Event page</h3>
+<h3>Comment on event</h3>
+<h3>View runner profile</h3>
+<h3>Training and Nutrition blogs</h3>
+<h3>Training and Nutrition blog page</h3>
+<h3>Profile page</h3>
 
 # Code examples
 
