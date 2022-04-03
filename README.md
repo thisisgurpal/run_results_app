@@ -93,12 +93,13 @@ On the marathons for you page, you can input your best marathon run and see what
   </table>
 
 # Code examples
-
-# Bugs
+<img src="https://user-images.githubusercontent.com/97416784/161441964-2955eff3-f366-41e3-9410-376001134fae.JPG" width="500">
+<img src="https://user-images.githubusercontent.com/97416784/161441988-cb59f274-9bca-440a-b442-9bca0495c114.JPG" width="500">
+<img src="https://user-images.githubusercontent.com/97416784/161441977-1f9c462e-6449-4f67-bda0-463e9c9322e9.JPG" width="250">
+<img src="https://user-images.githubusercontent.com/97416784/161442001-fb2a2be7-3649-4f9d-820e-82c6180ed5ed.JPG" width="1000">
 
 # Challenges
+My biggest challenge for this I would say is getting familiar with using python to build the back end. Once the project was over I felt much more confident and capable building the back end, I also found it much easier to seed the database using the django admin. Another challenge for me was implements the logic for users to save there favourite runners to their profile.
 
 # Wins
-
-# Contact
-
+My biggest win for this project was building a full stack application on my own about something that I enjoy and am passionate about. 
