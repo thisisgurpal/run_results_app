@@ -93,9 +93,17 @@ On the marathons for you page, you can input your best marathon run and see what
   </table>
 
 # Code examples
+Here is an example of a model for the event, I made the distances and owner a foreign field and the requirement (marathon run time to qualify for event) a many to many field.
+<h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161441964-2955eff3-f366-41e3-9410-376001134fae.JPG" width="500">
+This is the code used to get the data for a single event.
+<h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161441988-cb59f274-9bca-440a-b442-9bca0495c114.JPG" width="500">
+The folder structure for the event looks like this. It includes serializers, urls, models, etc.
+<h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161441977-1f9c462e-6449-4f67-bda0-463e9c9322e9.JPG" width="250">
+On the marathons for you page, I had to make a function that search for marathons that the user is qualified to run in. This is the function that calculates those marathons.
+<h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161442001-fb2a2be7-3649-4f9d-820e-82c6180ed5ed.JPG" width="1000">
 
 # Challenges
