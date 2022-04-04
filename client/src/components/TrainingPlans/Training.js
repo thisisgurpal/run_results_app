@@ -18,7 +18,7 @@ function Training() {
 
   useEffect(() => {
     const getTraining = async () => {
-      const { data } = await axios.get('/api/training/') // * <-- replace with your endpoint
+      const { data } = await axios.get('/api/training/')
       console.log(data.filter(training => training.description !== '...'))
       setTrainingData(data.filter(training => training.description !== '...'))
     }

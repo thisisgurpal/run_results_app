@@ -18,7 +18,7 @@ function Events() {
 
   useEffect(() => {
     const getEvents = async () => {
-      const { data } = await axios.get('/api/events/') // * <-- replace with your endpoint
+      const { data } = await axios.get('/api/events/')
       console.log(data)
       setEventsData(data)
     }

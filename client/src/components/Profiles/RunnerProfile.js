@@ -58,7 +58,7 @@ function RunnerProfile() {
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/runs/`) // * <-- replace with your endpoint
+      const { data } = await axios.get(`/api/runs/`) 
       console.log(data.filter(run => parseInt(run.runner.id) === parseInt(runnerID)))
       console.log(data)
       console.log(runnerID)
