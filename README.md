@@ -34,7 +34,7 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 * Clear data from database: `python manage.py flush`
 * Start back end server: `python manage.py runserver`
 
-# Technologies used
+# Technologies and tools used
 * Python
 * JavaScript
 * Django
