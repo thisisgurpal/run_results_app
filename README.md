@@ -50,6 +50,7 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 * React Router DOM
 * JWT
 * Insomnia
+* Heroku
 * Visual Studio Code
 
 # Planning
