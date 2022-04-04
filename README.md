@@ -19,8 +19,38 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 * Consume our API with a seperate front-end built in react.
 * Have visually impressive design.
 
+# Code Installation
+* Clone or download the repo.
+* Install backend dependencies: `pipenv` in the terminal
+* Enter the shell for the project: `pipenv shell`
+* Make Migrations: python manage.py makemigrations`
+* Migrate: `python manage.py migrate`
+* Create super user: `python manage.py createsuperuser`
+* Start Backup Server: `python manage.py runserver`
+* Install dependencies: `yarn`
+* Start front end server: `yarn start`
+* Put data into a seed.js file (specify app-name e.g events): `python manage.py dumpdata app-name --output app-name/seeds.json --indent=2`
+* Load seed.js data into database (specify app-name e.g events): `python manage.py loaddata app_name/seeds.json`
+* Clear data from database: `python manage.py flush`
+* Start back end server: `python manage.py runserver`
+
 # Technologies used
-Python, JavaScript, Django, Django REST Framework, PostgreSQL, Axios, React, SASS, CSS, Chakra, Cloudinary, React Router DOM.
+* Python
+* JavaScript
+* Django
+* Django REST Framework
+* PostgreSQL
+* TablePlus
+* Axios
+* React
+* SASS
+* CSS
+* Chakra
+* Cloudinary
+* React Router DOM
+* JWT
+* Insomnia
+* Visual Studio Code
 
 # Planning
 <img src="https://user-images.githubusercontent.com/97416784/161325623-b22e0158-c5e8-492f-8a7d-aa485a3d166c.JPG" width="1000">
