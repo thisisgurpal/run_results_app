@@ -14,7 +14,7 @@ RunnersUniverse: https://runnersuniverse.herokuapp.com/
 Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 
 # Brief
-* Build a full-stack application making my own back end and front end.
+* Build a Full-Stack application making my own back end and front end.
 * Use a Python Django API using Django REST Framework to serve my data from a Postgres database.
 * Consume our API with a seperate front-end built in react.
 * Have visually impressive design.
@@ -54,6 +54,17 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 * Visual Studio Code
 
 # Planning
+When starting to think about this project and what I wanted to build, there was no idea jumping out to me and I felt like a good idea would be to start thinking about my hobbies and passions from there. I love sports and have recently just got into running and have found myself on the internet researching runners and looking at events and health blogs, so this became the idea for my project. 
+
+I began brainstorming any ideas that came to mind and features that I would personally find quite useful as a user. I thought that being able to view past leaderboards, comment on events, saving your favourite runners and blogs to your profile was a great way for users to stay up to date with the running universe. 
+
+Next I moved on into inVision which is a tool to wireframe the application. I sketched out a high level structure for the project, this helped me realise the features and pages I needed for the application.
+
+Then I planned out the structure of the data, so that when I started to code the back end I knew exactly the fields I needed and how to go about adding them in. I used the QuickDatabaseDiagrams tool to plan this out, it’s a great way to visualise the data structure. I made sure to decide which fields will have a many to many relationship and which will have a one to many relationship. 
+
+Once all that was done I decided on how long I wanted to spend on the back end and front end so that I could manage my time effectively. I planned around 3 days on the back end, around 3 days on the front end and then 1 day to seed the database.
+
+<h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161325623-b22e0158-c5e8-492f-8a7d-aa485a3d166c.JPG" width="1000">
 
 # Walk through
