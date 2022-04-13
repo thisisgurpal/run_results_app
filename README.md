@@ -69,7 +69,11 @@ Once all that was done I decided on how long I wanted to spend on the back end a
 
 # Walk through
 <h3>Home page and dropdown menu</h3>
-When you land on the page you will be able to click on your preference of events or training & nutrition blogs.
+The home page welcomes you to the application and also displays the buttons for the different pages. These buttons are wrapped in a Link tag from React Router DOM to navigate to their page. I've also added some React Spring styling to these buttons so that on desktop mode there will be a cool hover effect.
+<h3></h3>
+In the nav bar I’ve also added buttons for the different pages as well the Login and Register sections, these are also wrapped in Link tags for navigation.
+<h3></h3>
+I wanted to keep the theme of this application consistent, which is why I chose to only use two main colours of black and yellow. 
 <h3></h3>
   <table>
   <tr>
@@ -78,7 +82,11 @@ When you land on the page you will be able to click on your preference of events
   </tr>
 </table>
 <h3>Login and register</h3>
-You will be able to register and login to create a profile. This will allow you to save your favourite users and comment on events.
+To create the register and login forms I used the FormControl tag from Chakra framework. The forms have a handleSubmit function when they are submitted. This function will do an Axios post request of the inputted data using a controller created on the back end. To input the data and save it in order to do the post request I had to create two states and a function to update them when inputs are changed. One of them is a state that contains information that has been input into the fields, and the other one contains the error messages if the data the user tried to submit was not in the correct format. If there are any error messages the form will not submit and the messages are shown under the input fields.
+<h3></h3>
+In the back end controller I made sure that a token is created for each new user. Within the handleSubmit function for the login form, it will take the token created on the back end and set it to the local storage. This lets me know what user is currently logged into the application.
+<h3></h3>
+In the register form input there is a profile picture uploader, this is not only used here but also on the comment form, it is also included on the forms that allow the user to edit their comments and profile picture. This is done using cloudinary, so when an image is uploaded it gets sent to cloudinary to retrieve a hosted path for the image which is then sent back to be displayed and saved into the state on the front end.
 <h3></h3>
 <table>
 <tr>
