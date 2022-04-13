@@ -95,23 +95,31 @@ In the register form input there is a profile picture uploader, this is not only
   </tr>
   </table>
 <h3>Dropdown after logged in</h3>
-Now you are logged in the drown menu will change so you can view your profile and logout.
+To know that the user is currently logged in I’ve created a function called userIsAutheniticated that gets the token from local storage, decodes it to find the pay load and then checks to see if the user is still authenticated by reviewing the expiry date.
+<h3></h3>
+I’ve added a ternary into the nav bar using the authentication function so that when the user is logged in, the navbar changes its elements from Login and Register to Logout and a profile page link is added. This profile link will use a class created in the back end code that will retrieve the logged in user's id through an Axios request, this id will be then used in the link path.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161327720-674273fc-abc2-4b15-b919-57b65b092d32.JPG" width="500">
 <h3>Profile page</h3>
-On your profile page you can see your saved blogs and saved runners as well as any comments you have made on events. These comments you will be able to delete if you wish. You'll be able to click on there runners and blogs to navigate to their pages.
+On the profile page an Axios request is made to get the user's details that are currently logged in. This request is made to a path that is specified on the back end, and can be done due a class that is also created to retrieve the details. 
+<h3></h3>
+On this page I wanted the user to be able to view their saved blog, runners and comments they have made. I found a nice way of displaying this through the use of tabs in the Chakra framework documentation, the user can now click through these tabs and see the details. These bogs and runners are wrapped in Link tabs so you can also navigate to their individual pages. The comments tab displays your comments with the ability to delete them if needed. This delete functionality is created on the back end using a class that finds the comment using its id and then deletes it.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161328294-a0696302-beb4-44ad-bd64-fc0b39eb2040.JPG" width="500">
 <h3>Events</h3>
-The events page is where you can view all running events.
+To get the information on the events page I made a class in the back end that will get all the events when an Axios request is made to a specified path. This is how I got these events to be displayed. I’ve taken the first event to be displayed large and then the rest will run through a map array method to be displayed below. Each of these marathon events are wrapped in a Link tag that will navigate to a path which includes the event id, this will be where the details of the event can be viewed.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161327825-45ce3d9a-927a-40b4-a64b-a0225b4f455f.JPG" width="500">
 <h3>Event page</h3>
-When you click on your desired event you will be able to get details about it and also view past event leaderboards for men and women. You can click on each of there runners to view there profile.
+On the individual event page an Axios request is made to a path which includes the event id which gets specific events details. The event id is retrieved in the current page path using useParams from React Router DOM. In the back end this Axios request path is specified and a class I made will find the event using the id and then send that event's details back to the front end.
+<h3></h3>
+In the event details there is a one to many relationship to the runs data. This means each run will have the event but each event will have multiple runs. The run data includes the runner id, event, position, year and run time. I wanted to create an easy to read display of the information and leaderboard whilst also being able toggle gender and year. Each runner has a Link tag to take you to the runner profile page where the runner id is inlcuded in the path. If you continue to scroll down on this page there is an events section.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161327881-70e6c351-18ba-45a9-a72b-c0c7e89bd365.JPG" width="1000">
 <h3>Comment on event</h3>
-Scrolling down on the event page you'll find a section to leave comments and view all comments. You can click on the avatars and names to navigate to the users profiles.
+Lower down on the event page there is a comment section where other users can share their thoughts and pictures (pictures through cloudinary mentioned in the ‘Login and register’ section) on the event. Each comment made conducts an Axios post request to a location that I’ve specified. In the back end I made classes so I can get, post and delete comments. The user can only post an event if they are logged in, so the leave a comments section will only be shown if that is the case through the use of the function isUserAuthenticated. If they are not logged in they can only see the comments that have been left. To get the comments for the specific event, they are all filtered using the event id. 
+<h3></h3>
+When a comment is made it will show at the top of the feed, as I’ve ordered them to show the most recent first. Also the avatar and the name will be wrapped in a Link tag which will navigate to that user's profile using the user id in the path which is retrieved from the comment data.
 <h3></h3>
 <table>
 <tr>
