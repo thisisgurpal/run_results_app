@@ -128,11 +128,13 @@ When a comment is made it will show at the top of the feed, as I’ve ordered th
 </tr>
   </table>
 <h3>View runner profile</h3>
-If you click on a runner from the leaderboard on the events page, you'll be taken to the runners profile. Here you can see all there runs and if you click the heart button they will be saved to your profile. You can click on the running event to navigate to the event page.
+When you click on the runner from the event page leader board you will be navigated to the individual runners profile page where you can view their past runs and also click the heart to save them in your personal profile section. In the back end I created runners data which includes the runners name, profile picture and gender. These runners are then linked to the runs data that include the position, event, time and year. As the runner id is in the path for this page I used useParams to get the runner id, and then used this in an Axios get request to retrieve the runner details.
+<h3></h3>
+To save the user I added a heart feature that toggles a state from false to true which also produces an animation. What I did was further add an onClick feature that triggers a function to run through an if statement. If the isClick state is false on click then I set the state to true, and perform a Axios post request to add the runner to the users favourite runners section. However if the isClick state is true on click, the state is then set to false and an Axios delete request is performed removing the runner from the users favourite runners data.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161328013-f5a66299-deee-41b1-9adb-763ea34413b3.JPG" width="500">
 <h3>Training and Nutrition blogs</h3>
-On the Training and Nutrition page you can view all blogs. When clicked into a blog you can then read what it's all about and get valuable information about fitness and nutrition.
+The training and health sections of the application are set up very similar to the events part. The difference is that on the individual blog page only the description and image are displayed to provide knowledge for the user.
 <h3></h3>
 <table>
 <tr>
@@ -141,7 +143,11 @@ On the Training and Nutrition page you can view all blogs. When clicked into a b
 </tr>
   </table>
 <h3>Marathons for you</h3>
-On the marathons for you page, you can input your best marathon run and see what events you have reached the requirements for. You are then able click on these running events and view the event page to get more info.
+To make the experience of this app more useful to the user, I made them able to see what events they could possibly run in depending on their best marathon time. In the Chakra framework I found a way to add a form box for users to fill out. 
+<h3></h3>
+Each event has a field called requirement, this is the time that is required for individuals to be qualified to run. The time changes for different age groups so the requirements field has many values.
+<h3></h3>
+When the user adds their details there is a react state that will be updated to save these details. Then when the user submits the form and function is triggered that filters through all of the requirements for each event and saves the ones that they are qualified for into another state. These filtered events are then displayed for the user to click into and find out more information.
 <h3></h3>
 <table>
 <tr>
