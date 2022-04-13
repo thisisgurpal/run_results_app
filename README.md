@@ -16,8 +16,8 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 # Brief
 * Build a Full-Stack application making my own back end and front end.
 * Use a Python Django API using Django REST Framework to serve my data from a Postgres database.
-* Consume our API with a seperate front-end built in react.
-* Have visually impressive design.
+* Consume our API with a seperate front-end built in React.
+* Have a visually impressive design.
 
 # Code Installation
 * Clone or download the repo.
@@ -113,7 +113,7 @@ To get the information on the events page I made a class in the back end that wi
 <h3>Event page</h3>
 On the individual event page an Axios request is made to a path which includes the event id which gets specific events details. The event id is retrieved in the current page path using useParams from React Router DOM. In the back end this Axios request path is specified and a class I made will find the event using the id and then send that event's details back to the front end.
 <h3></h3>
-In the event details there is a one to many relationship to the runs data. This means each run will have the event but each event will have multiple runs. The run data includes the runner id, event, position, year and run time. I wanted to create an easy to read display of the information and leaderboard whilst also being able toggle gender and year. Each runner has a Link tag to take you to the runner profile page where the runner id is inlcuded in the path. If you continue to scroll down on this page there is an events section.
+In the event details there is a one to many relationship to the runs data. This means each run will have the event but each event will have multiple runs. The run data includes the runner id, event, position, year and run time. I wanted to create an easy to read display of the information and leaderboard whilst also being able toggle gender and year. Each runner has a Link tag to take you to the runner profile page where the runner id is included in the path. If you continue to scroll down on this page there is an events section.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161327881-70e6c351-18ba-45a9-a72b-c0c7e89bd365.JPG" width="1000">
 <h3>Comment on event</h3>
@@ -169,11 +169,11 @@ In the project folder on the back end this is how I created the urls that will b
 The folder structure for the event looks like this. It includes serializers, urls, models, etc.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161441977-1f9c462e-6449-4f67-bda0-463e9c9322e9.JPG" width="250">
-On the marathons for you page, I had to make a function that search for marathons that the user is qualified to run in. This is the function that calculates those marathons.
+On the marathons for you page, I had to make a function that searches for marathons that the user is qualified to run in. This is the function that calculates those marathons.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161442001-fb2a2be7-3649-4f9d-820e-82c6180ed5ed.JPG" width="1000">
 
-# Key learnings and takewaways
+# Key learnings and takeaways
 My biggest learning for this project was learning how to build the back end of a Full-Stack application using Python, Django and PostgreSQL. Before this project I had some exposure to Python in terms of analysing data and that was not what was required on this project, there was much more in depth knowledge needed. 
 <h3></h3>
 In terms of seeding the database, it was especially easier to use the Django admin site to do this. I was able to add my data much more efficiently and effectively. It is something that has made me really enjoy using Django to build an application.
@@ -183,4 +183,5 @@ I found it a great experience learning about how to add different data sets and 
 A win in the project that I felt was setting up the PostgreSQL database and using it to be able to visualise the data better. I have some past experience using SQL to analyse data so I felt comfortable in this area.
 
 Another win for me was getting more familiar with the terminal to makemigrations, migrate and save seeds whenever I make any changes to the models. It became a process that I kept structured so I could ensure I didn’t lose any of my seeds. 
+
 
