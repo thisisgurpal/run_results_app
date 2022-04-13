@@ -157,12 +157,15 @@ When the user adds their details there is a react state that will be updated to 
   </table>
 
 # Code examples
-Here is an example of a model for the event, I made the distances and owner a foreign field and the requirement (marathon run time to qualify for event) a many to many field.
+Here is an example of a model which is for runs. The runner will be added to each run and also the event will be added to each run. On the events data many of these runs are populated to enable me to present the leaderboard on the individual event pages. 
 <h3></h3>
-<img src="https://user-images.githubusercontent.com/97416784/161441964-2955eff3-f366-41e3-9410-376001134fae.JPG" width="500">
-This is the code used to get the data for a single event.
+<img src="https://user-images.githubusercontent.com/97416784/163192527-fff24eeb-b56a-45ab-8fb3-88d8c54595dc.JPG" width="700">
+To make an Axios get request on the front end I had to specify what the get request does on the back end. In this class the code will use the event id and find it in all the events, then it will run a response to send the data back to that specific event. If the event is not found the code will raise detail to show it’s not found
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161441988-cb59f274-9bca-440a-b442-9bca0495c114.JPG" width="500">
+In the project folder on the back end this is how I created the urls that will be used as paths in the Axios requests. 
+<h3></h3>
+<img src="https://user-images.githubusercontent.com/97416784/163194543-f4409b58-ce73-4234-8974-d4ee5f07866f.JPG" width="500">
 The folder structure for the event looks like this. It includes serializers, urls, models, etc.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161441977-1f9c462e-6449-4f67-bda0-463e9c9322e9.JPG" width="250">
@@ -170,8 +173,14 @@ On the marathons for you page, I had to make a function that search for marathon
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161442001-fb2a2be7-3649-4f9d-820e-82c6180ed5ed.JPG" width="1000">
 
-# Challenges
-My biggest challenge for this I would say is getting familiar with using python to build the back end. Once the project was over I felt much more confident and capable building the back end, I also found it much easier to seed the database using the django admin. Another challenge for me was implements the logic for users to save there favourite runners to their profile.
+# Key learnings and takewaways
+My biggest learning for this project was learning how to build the back end of a Full-Stack application using Python, Django and PostgreSQL. Before this project I had some exposure to Python in terms of analysing data and that was not what was required on this project, there was much more in depth knowledge needed. 
+<h3></h3>
+In terms of seeding the database, it was especially easier to use the Django admin site to do this. I was able to add my data much more efficiently and effectively. It is something that has made me really enjoy using Django to build an application.
+<h3></h3>
+I found it a great experience learning about how to add different data sets and understanding more on how the views.py, models.py, urls.py and serializers interact with each other. This was initially a challenge for me, It was particularly difficult to work out how to make the many to many and one to many relationships. However when I managed to do it the first few times it increased my learning and helped me become more confident.
+<h3></h3>
+A win in the project that I felt was setting up the PostgreSQL database and using it to be able to visualise the data better. I have some past experience using SQL to analyse data so I felt comfortable in this area.
 
-# Wins
-My biggest win for this project was building a full stack application on my own about something that I enjoy and am passionate about. 
+Another win for me was getting more familiar with the terminal to makemigrations, migrate and save seeds whenever I make any changes to the models. It became a process that I kept structured so I could ensure I didn’t lose any of my seeds. 
+
