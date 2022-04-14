@@ -1,5 +1,5 @@
 # General Assembly Project 4 - RunnersUniverse
-This was a solo project where I created a running app that allows visitors to get information on running events, view past years leaders, view runners profiles, view fitness and health blogs and once registered and logged in you can save favourite runners, save favourite blogs and also comment on running events. For this project I built the back end which included making my own API, I also designed and developed the front end. This was done using PostgreSQL, Python, TablePlus, React. You can find this application <a href="https://runnersuniverse.herokuapp.com/">here</a>.
+This was a solo project where I created a running app that allows visitors to get information on running events, view past years leaders, view runners profiles, view fitness and health blogs and once registered and logged in you can save favourite runners and also comment on running events. For this project I built the back end which included making my own API, I also designed and developed the front end. This was done using PostgreSQL, Python, TablePlus, React. You can find this application <a href="https://runnersuniverse.herokuapp.com/">here</a>.
   <table>
   <tr>
     <td valign="top"><img src="https://user-images.githubusercontent.com/97416784/160816457-4e0258b7-20b2-45d4-a9e6-c4da5daedd5c.JPG" width="500"></td>
@@ -15,8 +15,8 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 
 # Brief
 * Build a Full-Stack application making my own back end and front end.
-* Use a Python Django API using Django REST Framework to serve my data from a Postgres database.
-* Consume our API with a seperate front-end built in React.
+* Use a Python Django API using Django REST Framework to serve my data from a PostgreSQL database.
+* Consume our API with a seperate front end built in React.
 * Have a visually impressive design.
 
 # Code Installation
@@ -54,7 +54,7 @@ Gurpal Gohler (LinkedIn): https://www.linkedin.com/in/gurpal-gohler/
 * Visual Studio Code
 
 # Planning
-When starting to think about this project and what I wanted to build, there was no idea jumping out to me and I felt like a good idea would be to start thinking about my hobbies and passions from there. I love sports and have recently just got into running and have found myself on the internet researching runners and looking at events and health blogs, so this became the idea for my project. 
+When starting to think about this project and what I wanted to build, there was no idea jumping out to me and I felt like a good idea would be to start thinking about my hobbies and passions and go from there. I love sports and have recently just got into running and have found myself on the internet researching runners and looking at events and health blogs, so this became the idea for my project. 
 
 I began brainstorming any ideas that came to mind and features that I would personally find quite useful as a user. I thought that being able to view past leaderboards, comment on events, saving your favourite runners and blogs to your profile was a great way for users to stay up to date with the running universe. 
 
@@ -86,7 +86,7 @@ To create the register and login forms I used the FormControl tag from Chakra fr
 <h3></h3>
 In the back end controller I made sure that a token is created for each new user. Within the handleSubmit function for the login form, it will take the token created on the back end and set it to the local storage. This lets me know what user is currently logged into the application.
 <h3></h3>
-In the register form input there is a profile picture uploader, this is not only used here but also on the comment form, it is also included on the forms that allow the user to edit their comments and profile picture. This is done using cloudinary, so when an image is uploaded it gets sent to cloudinary to retrieve a hosted path for the image which is then sent back to be displayed and saved into the state on the front end.
+In the register form input there is a profile picture uploader, this is not only used here but also on the comment form, it is also included on the forms that allow the user to edit their comments and profile picture. This is done using Cloudinary, so when an image is uploaded it gets sent to Cloudinary to retrieve a hosted path for the image which is then sent back to be displayed and saved into the state on the front end.
 <h3></h3>
 <table>
 <tr>
@@ -103,7 +103,7 @@ I’ve added a ternary into the nav bar using the authentication function so tha
 <h3>Profile page</h3>
 On the profile page an Axios request is made to get the user's details that are currently logged in. This request is made to a path that is specified on the back end, and can be done due a class that is also created to retrieve the details. 
 <h3></h3>
-On this page I wanted the user to be able to view their saved blog, runners and comments they have made. I found a nice way of displaying this through the use of tabs in the Chakra framework documentation, the user can now click through these tabs and see the details. These bogs and runners are wrapped in Link tabs so you can also navigate to their individual pages. The comments tab displays your comments with the ability to delete them if needed. This delete functionality is created on the back end using a class that finds the comment using its id and then deletes it.
+On this page I wanted the user to be able to view their saved runners and comments they have made. I found a nice way of displaying this through the use of tabs in the Chakra framework documentation, the user can now click through these tabs and see the details. These bogs and runners are wrapped in Link tabs so you can also navigate to their individual pages. The comments tab displays your comments with the ability to delete them if needed. This delete functionality is created on the back end using a class that finds the comment using its id and then deletes it.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161328294-a0696302-beb4-44ad-bd64-fc0b39eb2040.JPG" width="500">
 <h3>Events</h3>
@@ -117,7 +117,7 @@ In the event details there is a one to many relationship to the runs data. This 
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161327881-70e6c351-18ba-45a9-a72b-c0c7e89bd365.JPG" width="1000">
 <h3>Comment on event</h3>
-Lower down on the event page there is a comment section where other users can share their thoughts and pictures (pictures through cloudinary mentioned in the ‘Login and register’ section) on the event. Each comment made conducts an Axios post request to a location that I’ve specified. In the back end I made classes so I can get, post and delete comments. The user can only post an event if they are logged in, so the leave a comments section will only be shown if that is the case through the use of the function isUserAuthenticated. If they are not logged in they can only see the comments that have been left. To get the comments for the specific event, they are all filtered using the event id. 
+Lower down on the event page there is a comment section where other users can share their thoughts and pictures (pictures through Cloudinary mentioned in the ‘Login and register’ section) on the event. Each comment made conducts an Axios post request to a location that I’ve specified. In the back end I made classes so I can get, post and delete comments. The user can only post an event if they are logged in, so the leave a comments section will only be shown if that is the case through the use of the function isUserAuthenticated. If they are not logged in they can only see the comments that have been left. To get the comments for the specific event, they are all filtered using the event id. 
 <h3></h3>
 When a comment is made it will show at the top of the feed, as I’ve ordered them to show the most recent first. Also the avatar and the name will be wrapped in a Link tag which will navigate to that user's profile using the user id in the path which is retrieved from the comment data.
 <h3></h3>
@@ -160,7 +160,7 @@ When the user adds their details there is a react state that will be updated to 
 Here is an example of a model which is for runs. The runner will be added to each run and also the event will be added to each run. On the events data many of these runs are populated to enable me to present the leaderboard on the individual event pages. 
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/163192527-fff24eeb-b56a-45ab-8fb3-88d8c54595dc.JPG" width="700">
-To make an Axios get request on the front end I had to specify what the get request does on the back end. In this class the code will use the event id and find it in all the events, then it will run a response to send the data back to that specific event. If the event is not found the code will raise detail to show it’s not found
+To make an Axios get request on the front end I had to specify what the get request does on the back end. In this class the code will use the event id and find it in all the events, then it will run a response to send the data back to that specific event. If the event is not found the code will raise detail to show it’s not found.
 <h3></h3>
 <img src="https://user-images.githubusercontent.com/97416784/161441988-cb59f274-9bca-440a-b442-9bca0495c114.JPG" width="500">
 In the project folder on the back end this is how I created the urls that will be used as paths in the Axios requests. 
@@ -182,6 +182,5 @@ I found it a great experience learning about how to add different data sets and 
 <h3></h3>
 A win in the project that I felt was setting up the PostgreSQL database and using it to be able to visualise the data better. I have some past experience using SQL to analyse data so I felt comfortable in this area.
 
-Another win for me was getting more familiar with the terminal to makemigrations, migrate and save seeds whenever I make any changes to the models. It became a process that I kept structured so I could ensure I didn’t lose any of my seeds. 
-
+Another win for me was getting more familiar with the terminal to makemigrations, migrate and save seeds whenever I make any changes to the models. It became a process that I kept structured so I could ensure I didn’t lose any of my seeds.
 
