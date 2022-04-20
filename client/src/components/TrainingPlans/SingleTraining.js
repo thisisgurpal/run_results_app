@@ -36,7 +36,7 @@ function SingleTraining() {
             {Object.keys(trainingData).length ?
                 <Flex minHeight='100vh' direction='column' justifyContent='flex-start' alignItems='center'>
                     <Flex justifyContent='center' w='100%'><Text fontSize={{ base: '40px', md: '50px', lg: '60px' }} textAlign='center' mt='10' id='individual_page_headings' w='90%' >{trainingData.title}</Text></Flex>
-                    <Flex mt='10' direction={{ base: 'column' }} justifyContent='center' alignItems={{ base: 'center' }}>
+                    <Flex mt='10' maxW='1000px' direction={{ base: 'column' }} justifyContent='center' alignItems={{ base: 'center' }}>
                         <Flex bgGradient='linear(to-br, #FFBF00, #ffde7a)' borderTopLeftRadius={{ base: '0px', lg: '5px' }} borderTopRadius={{ base: '5px' }} direction='column' w={{ base: '80%' }}>
                             <Image w='100%' borderTopLeftRadius={{ base: '5px' }} borderTopRightRadius={{ base: '5px' }} src={trainingData.training_image}></Image>
                             <Flex justifyContent='center'>

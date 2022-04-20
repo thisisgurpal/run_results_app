@@ -12,20 +12,23 @@ function EventsForYou() {
         hours: '',
         minutes: '',
         seconds: '',
-        age: ''
+        age: '',
+        gender: ''
     })
 
     const [errorPR, setErrorPR] = useState({
         hours: '',
         minutes: '',
         seconds: '',
-        age: ''
+        age: '',
+        gender: ''
     })
 
     let hours_error
     let minutes_error
     let seconds_error
     let age_error
+    let gender_error
 
     // const [metric, setMetric] = React.useState(0)
 
@@ -51,6 +54,12 @@ function EventsForYou() {
         setErrorPR({ ...errorPR, age: '' })
     }
 
+    const handleGenderChange = (e) => {
+        console.log(e.target.value)
+        setPrs({ ...prs, gender: e.target.value })
+        setErrorPR({ ...errorPR, gender: '' })
+    }
+
     useEffect(() => {
         const getData = async () => {
             const { data } = await axios.get('/api/events/')
@@ -63,14 +72,14 @@ function EventsForYou() {
     function filterEvents() {
         const filtered_events = eventsData.filter(event =>
             event.distance.distance === '26.2' && event.requirement.some(requirement => {
-                if (prs.age >= 80) {
+                if (prs.age >= 80 && prs.gender.toLowerCase() === requirement.gender.toLowerCase()) {
                     return (
                         parseInt(prs.age) >= parseInt(requirement.age_group.split('-')[0]) &&
                         ((parseInt(prs.hours) * 60) + parseInt(prs.minutes) + (parseInt(prs.seconds) / 60)) <= ((parseInt(requirement.hours) * 60) +
                             parseInt(requirement.minutes) + (parseInt(requirement.seconds) / 60))
                     )
 
-                } else {
+                } else if (prs.gender.toLowerCase() === requirement.gender.toLowerCase()){
                     return (
                         parseInt(prs.age) <= parseInt(requirement.age_group.split('-')[1]) &&
                         parseInt(prs.age) >= parseInt(requirement.age_group.split('-')[0]) &&
@@ -100,8 +109,11 @@ function EventsForYou() {
         if (prs.age === '') {
             age_error = 'Select age'
         } else age_error = null
+        if (prs.gender === '') {
+            gender_error = 'Select gender'
+        } else gender_error = null
 
-        if (prs.hours !== '' && prs.minutes !== '' && prs.seconds !== '' && prs.age !== '') {
+        if (prs.hours !== '' && prs.minutes !== '' && prs.seconds !== '' && prs.age !== '' && prs.gender !== '') {
 
             filterEvents()
 
@@ -110,7 +122,8 @@ function EventsForYou() {
                 hours: hours_error,
                 minutes: minutes_error,
                 seconds: seconds_error,
-                age: age_error
+                age: age_error,
+                gender: gender_error
             })
         }
 
@@ -124,13 +137,20 @@ function EventsForYou() {
         console.log(allPRS)
         filterEvents()
     }
-
+    console.log(Object.keys(eventsData).length && eventsData)
     return (
         <Flex minHeight='100vh' w='100%' direction='column' alignItems='center'>
             <Flex direction='row' w='100%' justifyContent='center' alignItems='center'>
                 <Flex id='input_prs' p='10' borderRadius='10px' m='10' direction='column' w='600px'>
                     <Text textAlign='center' lineHeight='100%' fontSize={{ base: '25px', sm: '30px', md: '45px', xl: '60px' }} id='prs_input_title'>Enter your best runs:</Text>
                     <Text textAlign='center' mt='5'>Find out what events you are qualified to run in!</Text>
+                    <Flex direction='row' alignItems='center' mt={5}>
+                        <Text w='100px' mr='8'>Gender:</Text>
+                        <Select color='black' backgroundColor='white' onChange={handleGenderChange} placeholder='Select'>
+                            <option defaultValue='Male'>Male</option>
+                            <option defaultValue='Female'>Female</option>
+                        </Select>
+                    </Flex>
                     <Flex direction='row' alignItems='center' mt={5}>
                         <Text w='100px' mr='8'>Age:</Text>
                         <NumberInput maxW='100px' min={0} max={150} mr='2rem' value={prs.age} onChange={handleAgeChange}>

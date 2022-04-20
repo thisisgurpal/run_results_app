@@ -30,12 +30,12 @@ function Training() {
   return (
     <>
       {Object.keys(trainingData).length ?
-        <Flex minHeight='100vh' direction='column'>
+        <Flex minHeight='100vh' alignItems='center' direction='column'>
           <Flex h={{ base: '80px', sm: '110px', md: '125px', lg: '150px' }} justifyContent='center' alignItems='center'>
           <Text textAlign='center' fontSize={{ base: '25px', sm: '40px', md: '60px', lg: '90px'}} id='individual_page_headings'>TRAINING & HEALTH</Text>
           </Flex>
-          <Flex justifyContent='center' h={{ base: '500px', we: '600px', md: '1200px', xl: '500px' }}>
-            <Flex w={{ base: '60%', xl: '60%' }} h='100%' direction={{ base: 'column' }}>
+          <Flex justifyContent='center' w='90%' h={{ base: '500px', we: '600px', md: '1200px', xl: '500px' }}>
+            <Flex maxW='1000px' h='100%' direction={{ base: 'column' }}>
               <Box w='100%' h={{ base: 'auto', xl: '100%' }} mr='2'>
                 <Link to={`/training/${trainingData.filter(training => training.training_type === 'nutrition')[0].id}`}>
                   <Box id='main_event' color='black' display='flex' justifyContent='center' h={{ base: 'auto', xl: '100%' }} alignItems='center' w='100%' bgGradient='linear(to-br, #FFBF00, #ffde7a)'>
